@@ -46,12 +46,26 @@
                 animation-timing-function: ease-in;
             }
         }
+
+        .spin {
+            animation: spin 10s infinite linear;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
 <body class="flip">
     <div id="125987244">
-        <h1>Programerski klub FMF</h1>
+        <h1 class="spin">Programerski klub FMF</h1>
         <img src="https://kohivet.co.nz/media/1252/kittens.jpg?anchor=center&mode=crop&width=1140&height=550&rnd=132484398060000000"
             alt="Skupinska slika organizatorjev Programerskega kluba FMF">
         Programerski klub je organizacija študentov Fakultete za matematiko in fiziko z zanimanjem za programiranje.
@@ -69,7 +83,8 @@
         z ostalimi delimo, kako smo po treh dneh truda naposle našli manjkajoče podpičje, zaradi katerega celoten
         projekt ni delal...
 
-        <p>Hkrati želimo delati na resnih projektih in tako pridobiti resnične izkušnje z delov v industriji. V varnem
+        <p style="font-size: 80%;">Hkrati želimo delati na resnih projektih in tako pridobiti resnične izkušnje z delov
+            v industriji. V varnem
             okolju in ob podpori bolj izkušenih članov.</p>
 
         želimo, da bo programerski klub čez nekaj let veljal za znak kredibilnosti. Da bo sodelovanje v njem lovorika za
@@ -84,17 +99,22 @@
     Število zaužitih pic: 42
     <ul>
         <li>Matija Pretnar v celoti naprogramiral Projekt Tomo.</li>
-        <li>Gregor Cigler za vselej pretrgal vezi s programerskim klubom zaradi pomanjkanja oranžne.</li>
+        <li style="font-size: 90%;">Gregor Cigler za vselej pretrgal vezi s programerskim klubom zaradi pomanjkanja
+            oranžne.</li>
         <li>Andrej Bauer z znanjem aikida klub obranil pred kibernetskim napadom.</li>
         <li>Jure Kališnik dostavljalca pic prepoznal kot drugega bratranca vdove tretjega moža strica študenta, s
             katerim se je nekoč peljal v dvigalu.</li>
-        <li>Aleš Vavpetič znova zmagal v balinčkanju.</li>
+        <li style="font-size: 70%;">Aleš Vavpetič znova zmagal v balinčkanju.</li>
     </ul>
 
 
     <h2 style="animation: blinker 1.5s linear infinite; color: blue">Projekti</h2>
 
-    <a href=""></a>
+    <ul>
+        <li><a href="https://github.com/ul-fmf/projekt-tomo">Projekt Tomo</a></li>
+        <li><a href="https://github.com/ul-fmf/nadlogar">Nadlogar</a></li>
+    </ul>
+
     <h2 style="animation: blinker 2.5s linear infinite; color: purple">Vodstvo</h2>
     <p>TODO</p>
 </body>
