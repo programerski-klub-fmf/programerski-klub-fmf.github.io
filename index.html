@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -7,6 +8,7 @@
     <style>
         body {
             font-family: "Comic Sans MS", "Comic Sans", cursive;
+			margin: 0px 8px 0px 8px;
         }
 
         @keyframes blinker {
@@ -19,7 +21,6 @@
             backface-visibility: visible !important;
             animation: flip 10s ease infinite;
         }
-
         @keyframes flip {
             80% {
                 transform: perspective(400px) rotateY(0);
@@ -50,7 +51,6 @@
         .spin {
             animation: spin 10s infinite linear;
         }
-
         @keyframes spin {
             from {
                 transform: rotate(0deg);
@@ -60,63 +60,299 @@
                 transform: rotate(360deg);
             }
         }
+		.ignoreMouse {
+			pointer-events: none;
+		}
+		.invertColor {
+			-webkit-filter: invert(100%); /* Safari/Chrome */
+			filter: invert(100%);
+		}
+		.button:hover {
+			filter: brightness(50%);
+		}
+		.gameText {
+			font-size: 50px;
+			margin: 0px;
+			word-break: break-all;
+		}
+		.blueText {
+			color: #58b5e0;
+		}
+		.number {
+			position: absolute;
+			font-size: 50px;
+			color: #fff; 
+		}
+		.pi 
+		{
+			height: 60%;
+			opacity: 20%;
+		}
+		
+        #canvas {
+            background-color: #bbb;
+			border:1px solid #d3d3d3;
+			width:100%;
+			height:400px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+        }
+		
+		#mouse {
+			width: 80px;
+			height: 80px;
+			background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Pi-symbol.svg/800px-Pi-symbol.svg.png");
+			background-size: cover;
+			position: absolute;
+			transform: rotate(180deg);
+			-webkit-filter: invert(100%); /* Safari/Chrome */
+			filter: invert(100%);
+		}
+		#playButton {
+			position: absolute;
+			z-index:1;
+		}
+		#reachedScore {
+			color:#fff;
+			text-align:center;
+			position: absolute;
+			z-index:2;
+		}
+		#title {
+			position: absolute;
+			width: 100%;
+			top: 180px;
+			z-index: 2;
+		}
+		#title > h1 {
+			width: 80%;
+			margin: auto;
+			text-shadow: 3px 3px #fff;
+		}
     </style>
 </head>
 
-<body class="flip">
-    <div id="125987244">
-        <h1 class="spin">Programerski klub FMF</h1>
-        <img src="https://kohivet.co.nz/media/1252/kittens.jpg?anchor=center&mode=crop&width=1140&height=550&rnd=132484398060000000"
-            alt="Skupinska slika organizatorjev Programerskega kluba FMF">
-        Programerski klub je organizacija študentov Fakultete za matematiko in fiziko z zanimanjem za programiranje.
-        Srečujemo se vsak teden.
+<body>
+	<div id="canvas">
+		<img class="pi invertColor" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Pi-symbol.svg/800px-Pi-symbol.svg.png">
+		<input id="playButton" class="button" onclick="restartPlay()" type="image" src="https://www.freeiconspng.com/thumbs/play-button-icon-png/play-button-icon-png-0.png">
+		<p id="reachedScore" class="gameText ignoreMouse" hidden>#Števk<br><span id="reachedScoreValue" class="blueText"></span></p>
+	</div>
+	
+	<div id="mouseContainer">
+		<div id="numbers"></div>
+		<div id="mouse"></div>
+	</div>
+	<div id="title" class="ignoreMouse"><h1 class="spin flip">Programerski klub FMF</h1></div>
+	
+	<p id="nextNumber" class="gameText" style="margin-left: 0px 50px 0px 50px;" hidden><span>Naslednja števka: </span><span id="nextNumberValue" class="blueText"></span></p>
+	<p id="pickedNumbers" class="gameText" style="margin-left: 0px 50px 0px 50px;" hidden></p>
+	<div class="flip">
+		<p style="text-align:center">
+			<img src="https://kohivet.co.nz/media/1252/kittens.jpg?anchor=center&mode=crop&width=1140&height=550&rnd=132484398060000000"
+				alt="Skupinska slika organizatorjev Programerskega kluba FMF" style="width:99%">
+		</p>
+		<div id="125987244" style="padding: 0px 50px 0px 50px;">
+			Programerski klub je organizacija študentov Fakultete za matematiko in fiziko z zanimanjem za programiranje.
+			Srečujemo se vsak teden.
 
-        <audio src="https://www.youtube.com/watch?v=dQw4w9WgXcQ" autoplay>
-            <p>If you are reading this, it is because your browser does not support the audio element. </p>
-            <embed src="/music/good_enough.mp3" width="180" height="90" hidden="true" />
-        </audio>
+			<audio src="https://www.youtube.com/watch?v=dQw4w9WgXcQ" autoplay>
+				<p>If you are reading this, it is because your browser does not support the audio element. </p>
+				<embed src="/music/good_enough.mp3" width="180" height="90" hidden="true" />
+			</audio>
 
-        <h2 style="animation: blinker 2s linear infinite; color: red">Vizija</h2>
+			<h2 style="animation: blinker 2s linear infinite; color: red">Vizija</h2>
 
-        Programiranje je osamljena dejavnost. A ni treba, da je temu tako. V Programerskem klubu se srečujemo, da
-        navezujemo stike s programerji vrstniki; za imenjavo izkušenj; da se skupaj norčujemo iz zanič napisane kode; da
-        z ostalimi delimo, kako smo po treh dneh truda naposle našli manjkajoče podpičje, zaradi katerega celoten
-        projekt ni delal...
+			Programiranje je osamljena dejavnost. A ni treba, da je temu tako. V Programerskem klubu se srečujemo, da
+			navezujemo stike s programerji vrstniki; za imenjavo izkušenj; da se skupaj norčujemo iz zanič napisane kode; da
+			z ostalimi delimo, kako smo po treh dneh truda naposle našli manjkajoče podpičje, zaradi katerega celoten
+			projekt ni delal...
 
-        <p style="font-size: 80%;">Hkrati želimo delati na resnih projektih in tako pridobiti resnične izkušnje z delov
-            v industriji. V varnem
-            okolju in ob podpori bolj izkušenih članov.</p>
+			<p style="font-size: 80%;">Hkrati želimo delati na resnih projektih in tako pridobiti resnične izkušnje z delov
+				v industriji. V varnem
+				okolju in ob podpori bolj izkušenih članov.</p>
 
-        želimo, da bo programerski klub čez nekaj let veljal za znak kredibilnosti. Da bo sodelovanje v njem lovorika za
-        vsak življenjepis.
-
-
-
-        <h2 style="animation: blinker 1.235s linear infinite; color: green">Srečanja</h2>
-    </div>
-
-    <h3>30.2.2022</h3>
-    Število zaužitih pic: 42
-    <ul>
-        <li>Matija Pretnar v celoti naprogramiral Projekt Tomo.</li>
-        <li style="font-size: 90%;">Gregor Cigler za vselej pretrgal vezi s programerskim klubom zaradi pomanjkanja
-            oranžne.</li>
-        <li>Andrej Bauer z znanjem aikida klub obranil pred kibernetskim napadom.</li>
-        <li>Jure Kališnik dostavljalca pic prepoznal kot drugega bratranca vdove tretjega moža strica študenta, s
-            katerim se je nekoč peljal v dvigalu.</li>
-        <li style="font-size: 70%;">Aleš Vavpetič znova zmagal v balinčkanju.</li>
-    </ul>
+			želimo, da bo programerski klub čez nekaj let veljal za znak kredibilnosti. Da bo sodelovanje v njem lovorika za
+			vsak življenjepis.
 
 
-    <h2 style="animation: blinker 1.5s linear infinite; color: blue">Projekti</h2>
 
-    <ul>
-        <li><a href="https://github.com/ul-fmf/projekt-tomo">Projekt Tomo</a></li>
-        <li><a href="https://github.com/ul-fmf/nadlogar">Nadlogar</a></li>
-    </ul>
+			<h2 style="animation: blinker 1.235s linear infinite; color: green">Srečanja</h2>
 
-    <h2 style="animation: blinker 2.5s linear infinite; color: purple">Vodstvo</h2>
-    <p>TODO</p>
+			<h3>30.2.2022</h3>
+			Število zaužitih pic: 42
+			<ul>
+				<li>Matija Pretnar v celoti naprogramiral Projekt Tomo.</li>
+				<li style="font-size: 90%;">Gregor Cigler za vselej pretrgal vezi s programerskim klubom zaradi pomanjkanja
+					oranžne.</li>
+				<li>Andrej Bauer z znanjem aikida klub obranil pred kibernetskim napadom.</li>
+				<li>Jure Kališnik dostavljalca pic prepoznal kot drugega bratranca vdove tretjega moža strica študenta, s
+					katerim se je nekoč peljal v dvigalu.</li>
+				<li style="font-size: 70%;">Aleš Vavpetič znova zmagal v balinčkanju.</li>
+			</ul>
+
+
+			<h2 style="animation: blinker 1.5s linear infinite; color: blue">Projekti</h2>
+
+			<ul>
+				<li><a href="https://github.com/ul-fmf/projekt-tomo">Projekt Tomo</a></li>
+				<li><a href="https://github.com/ul-fmf/nadlogar">Nadlogar</a></li>
+			</ul>
+
+			<h2 style="animation: blinker 2.5s linear infinite; color: purple">Vodstvo</h2>
+			<p>TODO</p>
+		</div>
+	</div>
+	
+	<script>
+		// source: https://stackoverflow.com/questions/30747235/javascript-pi-%CF%80-calculator
+		function * generateDigitsOfPi() {
+			let q = 1n;
+			let r = 180n;
+			let t = 60n;
+			let i = 2n;
+			while (true) {
+				let digit = ((i * 27n - 12n) * q + r * 5n) / (t * 5n);
+				yield Number(digit);
+				let u = i * 3n;
+				u = (u + 1n) * 3n * (u + 2n);
+				r = u * 10n * (q * (i * 5n - 2n) + r - t * digit);
+				q *= 10n * i * (i++ * 2n - 1n);
+				t *= u;
+			}
+		}
+		
+		var difficulity = 3; // how many numbers are spawned at the same time
+		var time = 0; // current elapsed time of current difficulity
+		var spawnTimer = 0;
+		var piIter;
+		window.onload = function() { };
+		setInterval(function(){ spawner(); }, 10);
+		setInterval(function(){ updatePos(); }, 10);
+	
+		document.onmousemove = handleMouseMove
+		
+		// move catcher in pi shape to mouse position
+		function handleMouseMove(event) {
+			if (isInPlay()) {
+				var mouse = document.getElementById("mouse");
+				mouse.style.left = event.clientX + window.scrollX - mouse.offsetWidth / 2 + "px";
+				mouse.style.top = Math.min(event.clientY + window.scrollY, 400) - mouse.offsetHeight / 2 + "px";
+			}
+		}
+		// spawn numbers with delay and over time increase how many numbers are spawned at the same time (difficulity)
+		function spawner() {
+			if (isInPlay()) {
+				time += 0.01;
+				spawnTimer += 0.01;
+				let spawnDelay = 1 / (Math.log(time + 1)); // delay decreases as time passes
+				if(spawnTimer > spawnDelay) {
+					spawnTimer -= spawnDelay;
+					spawnNumber(difficulity);
+				}
+				if(spawnDelay < 0.3) {
+					difficulity += 2;
+					time = 0;
+				}
+			}
+		}
+		// spawn multiple (spawnCount) numbers at random x positions
+		function spawnNumber(spawnCount) {
+			if(isInPlay()) {
+				var numbers = document.getElementById("numbers");
+				for (var i = 0; i < spawnCount; i++) {
+					let num = document.createElement("div");
+					num.classList.add("number");
+					num.style.top = "-60px";
+					num.style.left = Math.random() * (document.getElementById("canvas").offsetWidth - 30) + "px"; // -50 to not go offscreen on right side
+					num.innerText = Math.floor(Math.random() * 10);
+					numbers.appendChild(num);
+				}
+			}
+		}
+		// move numbers down, check collision and destroy them when they reach bottom
+		function updatePos() {
+			if (isInPlay()) {
+				var mouse = document.getElementById("mouse");
+				var numbers = document.getElementById("numbers");
+				for	(var i = 0; i < numbers.childElementCount; i++) {
+					let top = parseInt(numbers.children[i].style.top, 10);
+					// delete number when it reaches bottom border of canvas
+					if (top > document.getElementById("canvas").offsetHeight) {
+						numbers.removeChild(numbers.children[i]);
+					}
+					else {
+						let left = parseInt(numbers.children[i].style.left, 10);
+						let distSquared = Math.pow(left - parseInt(mouse.style.left, 10) - mouse.offsetWidth / 4, 2) + 
+											Math.pow(top - parseInt(mouse.style.top, 10) - mouse.offsetHeight / 4, 2);
+						// pick number with mouse
+						if(distSquared < 1200) {
+							pickNumber(numbers.children[i].innerText);
+							numbers.removeChild(numbers.children[i]);
+						}
+						// move number down
+						else {
+							numbers.children[i].style.top = top + 2 + "px";
+						}
+					}
+				}
+			}
+		}
+		// check if picked number is correct and continue or stop the game
+		function pickNumber(num) {
+			var pickedNumbers = document.getElementById("pickedNumbers");
+			var nextNumberValue = document.getElementById("nextNumberValue");
+			// correct number was picked
+			if(num == nextNumberValue.innerText) {
+				if(pickedNumbers.innerText.length == 1) {
+					pickedNumbers.innerText += "." + num;
+				}
+				else {
+					pickedNumbers.innerText += num;
+				}
+				advanceTargetNumber();
+			}
+			else {
+				onLose();
+			}
+		}
+		// update showed target number to next digit of pi
+		function advanceTargetNumber() {
+			document.getElementById("nextNumberValue").innerText = piIter.next().value;
+		}
+		// show play button and collected digits count
+		function onLose() {
+			var pickedNumbers = document.getElementById("pickedNumbers");
+			document.getElementById("playButton").hidden = false;
+			
+			// show collected digits count
+			document.getElementById("reachedScoreValue").innerText = pickedNumbers.innerText.length - ((pickedNumbers.innerText.length > 1) ? 1 : 0)
+			document.getElementById("reachedScore").hidden = false;
+		}
+		// clean up previous game then initilize and start new play
+		function restartPlay() {
+			time = 0;
+			spawnTimer = 0;
+			difficulity = 3;
+			document.getElementById("playButton").hidden = true;
+			document.getElementById("reachedScore").hidden = true;
+			document.getElementById("nextNumber").hidden = false;
+			document.getElementById("pickedNumbers").hidden = false;
+			// delete all numbers that are still visible
+			var numbers = document.getElementById("numbers");
+			for (var i = numbers.childElementCount - 1; i >= 0; i--) {
+				numbers.removeChild(numbers.children[i]);
+			}
+			document.getElementById("pickedNumbers").innerText = "";
+			// reset generator for target numbers
+			piIter = generateDigitsOfPi();
+			advanceTargetNumber(); 
+		}
+		function isInPlay() {
+			return document.getElementById("playButton").hidden;
+		}
+	</script>
 </body>
 
 </html>
