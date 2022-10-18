@@ -5,10 +5,12 @@
 <head>
     <title>Programerski klub FMF</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content=" user-scalable=0">
     <style>
         body {
             font-family: "Comic Sans MS", "Comic Sans", cursive;
 			margin: 0px 8px 0px 8px;
+			width: 100%;
         }
 
         @keyframes blinker {
@@ -19,8 +21,9 @@
 
         .flip {
             backface-visibility: visible !important;
-            animation: flip 10s ease infinite;
+            animation: flip 20s ease infinite;
         }
+		
         @keyframes flip {
             80% {
                 transform: perspective(400px) rotateY(0);
@@ -82,11 +85,13 @@
 			position: absolute;
 			font-size: 50px;
 			color: #fff; 
+			touch-action: none;
 		}
 		.pi 
 		{
 			height: 60%;
 			opacity: 20%;
+			touch-action: none;
 		}
 		
         #canvas {
@@ -97,8 +102,13 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			touch-action: none;
         }
-		
+		#mouseContainer, #numbers {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
 		#mouse {
 			width: 80px;
 			height: 80px;
@@ -108,10 +118,14 @@
 			transform: rotate(180deg);
 			-webkit-filter: invert(100%); /* Safari/Chrome */
 			filter: invert(100%);
+			touch-action: none;
+			left: 0px;
+			top: 0px;
 		}
 		#playButton {
 			position: absolute;
 			z-index:1;
+			touch-action: none;
 		}
 		#reachedScore {
 			color:#fff;
@@ -121,7 +135,7 @@
 		}
 		#title {
 			position: absolute;
-			width: 100%;
+			width: 90%;
 			top: 180px;
 			z-index: 2;
 		}
@@ -146,12 +160,12 @@
 	</div>
 	<div id="title" class="ignoreMouse"><h1 class="spin flip">Programerski klub FMF</h1></div>
 	
-	<p id="nextNumber" class="gameText" style="margin-left: 0px 50px 0px 50px;" hidden><span>Naslednja števka: </span><span id="nextNumberValue" class="blueText"></span></p>
+	<p id="nextNumber" class="gameText" style="margin-left: 0px 50px 0px 50px;" hidden><span>Poberi števko: </span><span id="nextNumberValue" class="blueText"></span></p>
 	<p id="pickedNumbers" class="gameText" style="margin-left: 0px 50px 0px 50px;" hidden></p>
 	<div class="flip">
 		<p style="text-align:center">
 			<img src="https://kohivet.co.nz/media/1252/kittens.jpg?anchor=center&mode=crop&width=1140&height=550&rnd=132484398060000000"
-				alt="Skupinska slika organizatorjev Programerskega kluba FMF" style="width:99%">
+				alt="Skupinska slika organizatorjev Programerskega kluba FMF" style="width:90%">
 		</p>
 		<div id="125987244" style="padding: 0px 50px 0px 50px;">
 			Programerski klub je organizacija študentov Fakultete za matematiko in fiziko z zanimanjem za programiranje.
@@ -265,7 +279,7 @@
 					let num = document.createElement("div");
 					num.classList.add("number");
 					num.style.top = "-60px";
-					num.style.left = Math.random() * (document.getElementById("canvas").offsetWidth - 30) + "px"; // -50 to not go offscreen on right side
+					num.style.left = Math.random() * (document.getElementById("canvas").offsetWidth - 30) + "px"; // -30 to not go offscreen on right side
 					num.innerText = Math.floor(Math.random() * 10);
 					numbers.appendChild(num);
 				}
