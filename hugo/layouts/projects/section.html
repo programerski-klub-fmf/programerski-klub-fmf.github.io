@@ -1,0 +1,12 @@
+{{ define "main" }}
+<main>
+    {{ .Content }}
+    {{ range .Paginator.Pages }}
+    <li>
+        <div>
+            {{ partial "summary.html" . }}
+        </div>
+    </li>
+    {{ end }}
+</main>
+{{ end }}
