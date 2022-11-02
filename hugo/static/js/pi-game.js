@@ -1,17 +1,3 @@
-<div id="canvas">
-	<div id="numbers"></div>
-	<div id="mouse"></div>
-	
-	<img class="pi-background" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Pi-symbol.svg/800px-Pi-symbol.svg.png">
-	<input id="playButton" onclick="restartPlay()" type="image" src="https://www.freeiconspng.com/thumbs/play-button-icon-png/play-button-icon-png-0.png">
-	<p id="reachedScore" class="gameText ignoreMouse" hidden>#Števk<br><span id="reachedScoreValue" class="blueText"></span></p>
-	
-</div>
-
-<p id="nextNumber" class="gameText" style="margin-left: 0px 50px 0px 50px;" hidden><span>Poberi števko: </span><span id="nextNumberValue" class="blueText"></span></p>
-<p id="pickedNumbers" class="gameText" style="margin-left: 0px 50px 0px 50px;" hidden></p>
-
-<script>
 // source: https://stackoverflow.com/questions/30747235/javascript-pi-%CF%80-calculator
 function * generateDigitsOfPi() {
 	let q = 1n;
@@ -161,4 +147,3 @@ function restartPlay() {
 function isInPlay() {
 	return document.getElementById("playButton").hidden;
 }
-</script>
