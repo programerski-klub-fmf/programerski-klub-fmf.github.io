@@ -1,23 +1,44 @@
-<nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="/">Programerski klub FMF</a>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">Programerski klub FMF</a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/meetings">Srečanja</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/projects">Projekti</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/entertainment">Resne zadeve</a>
-            </li>
-        </ul>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
     </div>
 
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="/meetings">Srečanja</a>
+            <a class="navbar-item" href="/projects">Projekti</a>
+            <a class="navbar-item" href="/entertainment">Resne zadeve</a>
+        </div>
+    </div>
 </nav>
+
+<script type="text/javascript">
+    // script, za delovanje gumba ki skriva in pokaže navbar na telefonih
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+
+                // Get the target from the "data-target" attribute
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+
+            });
+        });
+
+    });
+</script>

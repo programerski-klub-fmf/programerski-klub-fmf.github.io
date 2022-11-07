@@ -1,16 +1,17 @@
 {{ define "main" }}
 <section id="main">
-    <h1 id="title">{{ .Title }}</h1>
+    <h1 class="title">{{ .Title }}</h1>
     <div>
-        <article id="content">
+        <article class="content">
             {{ .Content }}
         </article>
     </div>
-</section>>
+</section>
+<hr>
 <aside id="meta">
     <div>
         <section>
-            <h4 id="date"> {{ .Date.Format "Mon Jan 2, 2006" }} </h4>
+            <h4> {{ .Date.Format "Mon Jan 2, 2006" }} </h4>
             <h5 id="wordcount"> {{ .WordCount }} Words </h5>
         </section>
         {{ with .Params.topics }}
@@ -28,13 +29,23 @@
         </ul>
         {{ end }}
     </div>
-    <div>
-        {{ with .PrevInSection }}
-        <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
-        {{ end }}
-        {{ with .NextInSection }}
-        <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
-        {{ end }}
-    </div>
+    <nav class="level">
+        <!-- Left side -->
+        <div class="level-left">
+            <p class="level-item">
+                {{ with .PrevInSection }}
+                <a class="previous" href="{{.Permalink}}"> ←&nbsp{{.Title}}</a>
+                {{ end }}
+            </p>
+        </div>
+
+        <div class="level-right">
+            <p class="level-item">
+                {{ with .NextInSection }}
+                <a class="next" href="{{.Permalink}}"> {{.Title}}&nbsp→</a>
+                {{ end }}
+            </p>
+        </div>
+    </nav>
 </aside>
 {{ end }}
