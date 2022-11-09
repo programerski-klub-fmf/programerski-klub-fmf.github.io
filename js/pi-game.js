@@ -58,7 +58,7 @@ function spawnNumber(spawnCount) {
 		var numbers = document.getElementById("numbers");
 		for (var i = 0; i < spawnCount; i++) {
 			let num = document.createElement("div");
-			num.classList.add("number");
+			num.classList.add("pi-game-number");
 			num.style.top = "-60px";
 			num.style.left = Math.random() * (document.getElementById("canvas").offsetWidth - 30) + "px"; // -30 to not go offscreen on right side
 			num.innerText = Math.floor(Math.random() * 10);
