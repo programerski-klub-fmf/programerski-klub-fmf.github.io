@@ -1,9 +1,14 @@
 <article class="card">
     <header class="card-header">
-        <h2 class="card-title">{{ .Title }}</h2>
+        <p class="card-header-title">
+            {{ .Title }}
+        </p>
     </header>
-    <body class="card-body">
-        Število zaužitih pic: {{ .Params.pizzas_consumed }}
-        {{ .Content }}
-    </body>
+    <div class="card-content">
+        <div class="content">
+            Število zaužitih pic: {{ .Params.pizzas_consumed }}
+            {{ .Content }}
+            <br>
+        </div>
+    </div>
 </article>

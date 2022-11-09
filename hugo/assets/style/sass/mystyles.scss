@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+// Set your brand colors
+$red: #B4162C; 
+$light-red: #d4b3b8;
+$lighter-red: #e5c0c6;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+
+// Update Bulma's global variables
+$primary: $red;
+$primary-light: $beige-light;
+
+$widescreen-enabled: true;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$body-background-color: $beige-lighter;
+// mogoče bi bilo bolje, če ne bi bile bele (default vrednost) ampak svetlo rdeče ne zgedajo dobro
+$navbar-background-color: $light-red;
+$navbar-item-hover-background-color: $lighter-red;
+//$footer-background-color: $light-red;
+$card-header-background-color: $light-red;
+
+// Import only what you need from Bulma
+@import "../bulma/sass/utilities/_all.sass";
+@import "../bulma/sass/base/_all.sass";
+@import "../bulma/sass/layout/footer.sass";
+@import "../bulma/sass/components/navbar.sass";
+@import "../bulma/sass/components/card.sass";
+@import "../bulma/sass/components/menu.sass";
+@import "../bulma/sass/components/level.sass";
+@import "../bulma/sass/elements/content.sass";
+@import "../bulma/sass/elements/container.sass";
+@import "../bulma/sass/elements/title.sass";
+@import "../bulma/sass/elements/other.sass";
+@import "../bulma/sass/helpers/spacing.sass";
+@import "../bulma/sass/helpers/color.sass";
+

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="si">
 
 <head>
     {{ block "head" . }}
@@ -13,7 +13,9 @@
 <body>
     {{ partial "navbar" . }}
 
-    {{ block "main" . }}{{ end }}
+    <main class="container p-3 has-background-primary-light" style="min-height:75vh;" aria-role="main">
+        {{ block "main" . }}{{ end }}
+    </main>
 
     {{ partialCached "footer" . }}
 </body>

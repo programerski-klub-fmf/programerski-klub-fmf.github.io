@@ -9,7 +9,7 @@
 .blueText {
 	color: #58b5e0;
 }
-.number {
+.pi-game-number { /* Bulma has a class named number and it conflicts with this if it's just called number */
 	position: absolute;
 	font-size: 50px;
 	color: #fff; 
