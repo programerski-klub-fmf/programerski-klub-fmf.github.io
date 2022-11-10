@@ -1,8 +1,30 @@
 {{ define "main" }}
 {{ .Content }}
-{{ range .Paginator.Pages }}
-<div class="block">
-    {{ partial "card.html" . }}
+
+<div class="columns">
+    <div class="column">
+        {{ $count := 0 }}
+        {{ range .Paginator.Pages }}
+        {{ if eq (mod $count 2) 0 }}
+        <div class="block">
+            {{ partial "meeting_card.html" . }}
+        </div>
+        {{ end }}
+        {{ $count = add $count 1 }}
+        {{ end }}
+    </div>
+
+    <div class="column">
+        {{ $count := 0 }}
+        {{ range .Paginator.Pages }}
+        {{ if eq (mod $count 2) 1 }}
+        <div class="block">
+            {{ partial "meeting_card.html" . }}
+        </div>
+        {{ end }}
+        {{ $count = add $count 1 }}
+        {{ end }}
+    </div>
 </div>
-{{ end }}
+
 {{ end }}

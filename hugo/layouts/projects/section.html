@@ -1,10 +1,9 @@
 {{ define "main" }}
 {{ .Content }}
 {{ range .Paginator.Pages }}
-<li>
-    <div>
-        {{ partial "summary.html" . }}
-    </div>
-</li>
+<div class="block">
+    {{ partial "project_card.html" . }}
+</div>
 {{ end }}
 {{ end }}
+
