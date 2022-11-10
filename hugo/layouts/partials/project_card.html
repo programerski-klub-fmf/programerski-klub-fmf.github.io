@@ -1,12 +1,17 @@
 <article class="card">
     <header class="card-header">
         <p class="card-header-title">
-            {{ .Title }}
+            <a href='{{ .Permalink }}'>
+                <span class="icon">
+                    <i class="fas fa-code"></i>
+                </span>
+                &ensp;
+                {{ .Title }}
+            </a>
         </p>
     </header>
     <div class="card-content">
         <div class="content">
-            Število zaužitih pic: {{ .Params.pizzas_consumed }}
             {{ .Content }}
             <br>
         </div>

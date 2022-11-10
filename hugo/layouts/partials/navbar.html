@@ -11,34 +11,28 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" href="/meetings">Srečanja</a>
-            <a class="navbar-item" href="/projects">Projekti</a>
-            <a class="navbar-item" href="/entertainment">Resne zadeve</a>
+            <a class="navbar-item" href="/meetings">
+                <span class="icon">
+                    <i class="fas fa-comments"></i>
+                </span>
+                &nbsp;
+                <span> Srečanja </span>
+            </a>
+            <a class="navbar-item" href="/projects">
+                <span class="icon">
+                    <i class="fas fa-diagram-project"></i>
+                </span>
+                &nbsp;
+                <span> Projekti </span>
+            </a>
+            <a class="navbar-item" href="/entertainment">
+                <span class="icon">
+                    <i class="fas fa-gamepad"></i>
+                </span>
+                &nbsp;
+                <span> Resne zadeve </span>
+            </a>
         </div>
     </div>
 </nav>
 
-<script type="text/javascript">
-    // script, za delovanje gumba ki skriva in pokaže navbar na telefonih
-    document.addEventListener('DOMContentLoaded', () => {
-
-        // Get all "navbar-burger" elements
-        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-        // Add a click event on each of them
-        $navbarBurgers.forEach( el => {
-            el.addEventListener('click', () => {
-
-                // Get the target from the "data-target" attribute
-                const target = el.dataset.target;
-                const $target = document.getElementById(target);
-
-                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-                el.classList.toggle('is-active');
-                $target.classList.toggle('is-active');
-
-            });
-        });
-
-    });
-</script>
