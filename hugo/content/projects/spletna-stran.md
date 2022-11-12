@@ -1,7 +1,7 @@
 ---
 title: "Spletna Stran"
 date: 2022-11-02T21:42:40+01:00
-draft: true
+draft: false
 repository_link: "https://github.com/programerski-klub-fmf/programerski-klub-fmf.github.io"
 contacts:
     - name: "Nik Erzetič"
