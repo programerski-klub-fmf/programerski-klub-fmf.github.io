@@ -1,7 +1,7 @@
 ---
 title: "Domača stran"
 date: 2022-10-27T15:19:38+02:00
-draft: true
+draft: false
 ---
 
 ## Vizija
