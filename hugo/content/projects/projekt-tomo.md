@@ -8,6 +8,4 @@ contacts:
       link:
 ---
 
-# Projekt Tomo
-
 Projekt tomo je spletna stran za učenje programiranja. Uporabljajo ga šole in univerze. Začetniki projekta so ???. Programerski klub je projekt najprej nadgradil na najnovešo verzijo *Pythona*. Sedaj delamo na odpravljanju *issue*-jev, objavljenih na *GitHub* strani projekta.

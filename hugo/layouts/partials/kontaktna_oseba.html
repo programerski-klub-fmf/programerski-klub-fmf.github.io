@@ -1,0 +1,5 @@
+{{ if ( ne .link nil ) }}
+<a href="{{ .link }}">{{ .name }}</a>
+{{ else }}
+{{ .name }}
+{{ end }}

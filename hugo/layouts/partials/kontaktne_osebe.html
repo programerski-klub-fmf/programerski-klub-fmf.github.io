@@ -1,0 +1,19 @@
+{{ if eq (len .Params.contacts ) 1 }}
+{{ if eq ( index .Params.contacts 0 "name" ) nil }}
+Kontaktna oseba za zdaj še ni nastavljena
+{{ else }}
+Kontaktna oseba za ta projekt je
+{{ range .Params.contacts }}
+{{ partial "kontaktna_oseba" . }}
+{{ end }}
+{{ end }}
+{{ else }}
+Kontaktne osebe za ta projekt so
+<ul>
+    {{ range .Params.contacts }}
+    <li>
+        {{ partial "kontaktna_oseba" . }}
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
