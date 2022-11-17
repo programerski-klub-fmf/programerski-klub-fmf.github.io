@@ -4,7 +4,7 @@ date: 2022-11-02T21:44:28+01:00
 draft: false
 repository_link: "https://github.com/ul-fmf/fmfdelo"
 contacts:
-    - name: G. Test
+    - name:
       link:
 ---
 
