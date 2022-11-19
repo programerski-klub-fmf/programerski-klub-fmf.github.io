@@ -5,5 +5,5 @@ draft: true
 repository_link: ""
 contacts:
     - name:
-      link:
+      at:
 ---

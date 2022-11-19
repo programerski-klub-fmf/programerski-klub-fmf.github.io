@@ -5,7 +5,7 @@ draft: false
 repository_link: "https://github.com/ul-fmf/nadlogar"
 contacts:
     - name:
-    - contanct:
+    - at:
 ---
 
 # Nadlogar

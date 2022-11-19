@@ -5,7 +5,7 @@ draft: false
 repository_link: "https://github.com/programerski-klub-fmf/programerski-klub-fmf.github.io"
 contacts:
     - name: "Nik Erzetič"
-      link: 
+      at: "nikerzetic@gmail.com"
 ---
 
 # Spletna stran Programerskega kluba
