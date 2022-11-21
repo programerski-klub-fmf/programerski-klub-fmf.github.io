@@ -47,9 +47,11 @@ hugo new project-ideas/file-name.md
 
 Your file is locate at `./your-fork-name/hugo/content/project-ideas/file-name.md`. 
 
+---
+
 Navigate to the proper folder, and edit your file manually. 
 
-### Testing
+## Testing
 
 To test your code locally, run the command:
 ```
@@ -60,6 +62,24 @@ You should now be able to access the demo site at ```https://localhost:1313/```.
 
 ## Repository Structure 
 
+The majority of the code resides in the `hugo` directory. The `config.yaml` file holds the site's global settings. 
 
+The `hugo` directory is further divided into the following subfolders. 
+
+### Archetypes 
+
+### Content 
+
+### Data
+
+### Public
+
+### Static
+
+### Templates 
 
 ## Github Actions 
+
+This project uses *Github Actions Workflow* to automatically deploy the site to *GitHub pages* (TODO: and to validate the `HTML` with regards to the *HTML Living Standard*). The action triggers on `push` and `pull request` events. 
+
+You can access the *GitHub Actions* files at `.github/actions/`.
