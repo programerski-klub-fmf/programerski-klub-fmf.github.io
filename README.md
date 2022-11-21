@@ -82,4 +82,4 @@ The `hugo` directory is further divided into the following subfolders.
 
 This project uses *Github Actions Workflow* to automatically deploy the site to *GitHub pages* (TODO: and to validate the `HTML` with regards to the *HTML Living Standard*). The action triggers on `push` and `pull request` events. 
 
-You can access the *GitHub Actions* files at `.github/actions/`.
+You can access the *GitHub Actions* files at `.github/workflow/`.
