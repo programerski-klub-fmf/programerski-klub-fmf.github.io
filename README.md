@@ -20,7 +20,7 @@ This is where you'll do all the work.
 
 ## Adding content
 
-*Hugo* builds the sites content from `markdown` files (ending `.md`) in folder `content` and it's subfolders. Each file contains metadata as embedded `yaml` code (encapsulated by `---`), that *Hugo* can axes. 
+*Hugo* builds the site's content from `markdown` files (ending `.md`) in  the `content` folder and its subfolders. Each file contains metadata as embedded `yaml` code (encapsulated by `---`), that *Hugo* can access. 
 
 To create a new content file run the `hugo new` command. Make sure that the file name is preceeded by the appropriate folder, as demonstrated below. This way, *Hugo* will already include the appropriate metadata template. 
 
@@ -49,7 +49,7 @@ Your file is located at `./your-fork-name/hugo/content/project-ideas/file-name.m
 
 ---
 
-To add or eddit content, navigate to the proper folder and open your newly-created file in your chosen edditor. 
+To add or edit content, navigate to the proper folder and open your newly-created file in your chosen editor. 
 
 ## Testing
 
@@ -74,27 +74,37 @@ For example, when you run `hugo new meetins/YYYY-MM-DD.md`, *Hugo* will copy the
 
 This is why we don't create new files directly, and instead use the `hugo new` command.
 
-### Assests/style
+### Assets/style
 
-TODO
+The folder `assets/style` contains two subdirectories: `bulma`  and `sass`. 
+
+#### bulma
+
+This file holds the source code for the [*Bulma*](https://bulma.io/) `CSS` framework. Generaly, nothing here should be changed.
+
+#### sass
+
+The only file included, `mystyles.scss`,  defines all our *Bulma* framework customisation. Upon build, *Hugo* automatically generates the site's stylesheet CSS file. For additional information on *Bulma* customisation with `scss` files, visit the official [*Bulma* website](https://bulma.io/documentation/customize/).
 
 ### Content 
 
 The `content` folder stores the content of this webpage. Unless you're working on structural changes to the site, this is the only directory you should access. 
 
-> content/
->   entertainment/
->     index.html
->   meetings/
->     _index.md
->     ...
->   projects/
->     _index.md
->     ...
->   project-ideas/
->     _index.md
->     ...
->   index.md
+```bash
+content
+├── _index.md
+├── entertainment
+│   └── index.html
+├── meetings
+│   ├── YYYY-MM-DD.md
+│   └── _index.md
+├── project-ideas
+│   ├── project-idea-name.md
+│   └── _index.md
+└── projects
+    ├── project-name.md
+    └── _index.md
+```
 
 ### Data
 
@@ -102,7 +112,7 @@ No in use.
 
 ### Layouts
 
-The `layouts` folder defines the site's `HTML` templates. In it's structure it mirrors the `content` folder, which defines how each subpage randers. 
+The `layouts` folder defines the site's `HTML` templates. In its structure it mirrors the `content` folder, which defines how each subpage randers. 
 
 ### Public
 
