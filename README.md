@@ -1,6 +1,6 @@
 # Programerski klub FMF
 
-This repository contains the code and thecontent for the official website of *Programerski klub FMF*. It relies on the *Hugo* static site generator to build the `HTML` files. It is deployed by *GitHub Pages*.
+This repository contains the code and the content for the official website of *Programerski klub FMF*. It relies on the *Hugo* static site generator to build the `HTML` files. It is deployed by *GitHub Pages*.
 
 ## Setup
 
@@ -26,7 +26,7 @@ To create a new content file run the `hugo new` command. Make sure that the file
 
 The only exception to this is the folder `entertainment`. Before implementing any changes, consult the project managers. 
 
-### Metings
+### Meetings
 ```
 hugo new meetings/YYYY-MM-DD.md
 ```
@@ -40,7 +40,7 @@ hugo new projects/file-name.md
 
 Your file is located at `./your-fork-name/hugo/content/projects/file-name.md`. 
 
-### Project idea
+### Project ideas
 ```
 hugo new project-ideas/file-name.md
 ```
@@ -66,6 +66,8 @@ The majority of the code resides in the `hugo` directory. The `config.yaml` file
 
 The `hugo` directory is further divided into the following subfolders. 
 
+> A more general breakdown of a *Hugo* site directory is available on [*Hugo*'s official website](https://gohugo.io/content-management/).
+
 ### Archetypes 
 
 The `archetypes` folder contains content templates. These will automatically copy into the new file and populate certain fields when you run the `hugo new` command. 
@@ -84,7 +86,9 @@ This file holds the source code for the [*Bulma*](https://bulma.io/) `CSS` frame
 
 #### sass
 
-The only file included, `mystyles.scss`,  defines all our *Bulma* framework customisation. Upon build, *Hugo* automatically generates the site's stylesheet CSS file. For additional information on *Bulma* customisation with `scss` files, visit the official [*Bulma* website](https://bulma.io/documentation/customize/).
+The only file included, `mystyles.scss`,  defines all our *Bulma* framework customisation. Upon build, *Hugo* automatically generates the site's stylesheet CSS file. 
+
+> For additional information on *Bulma* customisation with `scss` files, visit the official [*Bulma* website](https://bulma.io/documentation/customize/).
 
 ### Content 
 
@@ -108,7 +112,7 @@ content
 
 ### Data
 
-No in use.
+Additional data that *Hugo* can use when generating the site. Not in use.
 
 ### Layouts
 
@@ -122,8 +126,13 @@ In the `public` directory, *Hugo* stores deployment ready files. Because *GitHub
 
 The folder `static` contains the site's global static files, such as its stylesheet and logo.
 
+> For additional information on *Hugo* repository structure read the official [*Hugo* documentation](https://gohugo.io/getting-started/directory-structure/).
+
+
 ## Github Actions 
 
 This project uses *Github Actions Workflow* to automatically deploy the site to *GitHub pages* (TODO: and to validate the `HTML` with regards to the *HTML Living Standard*). The action triggers on `push` and `pull request` events. 
 
 You can access the *GitHub Actions* files at `.github/workflow/`.
+
+> For more information on *GitHub Actions* take a look at official [documentation](https://docs.github.com/en/actions).
