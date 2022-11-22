@@ -5,7 +5,7 @@ draft: false
 repository_link: "https://github.com/ul-fmf/projekt-tomo"
 contacts:
     - name: "Matija Pretnar"
-      link:
+      at:
 ---
 
 # Projekt Tomo
