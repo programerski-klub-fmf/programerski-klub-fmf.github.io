@@ -27,6 +27,7 @@
 }
 
 #canvas {
+	overflow: hidden;
 	position: relative;
 	background-color: #bbb;
 	border:1px solid #d3d3d3;
