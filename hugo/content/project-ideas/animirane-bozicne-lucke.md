@@ -4,7 +4,7 @@ date: 2022-11-24T15:05:32+01:00
 draft: false
 repository_link: ""
 contacts:
-    - name:"Katja Beršič"
+    - name: "Katja Beršič"
       at: "katja.bercic@fmf.uni-lj.si"
 ---
 
