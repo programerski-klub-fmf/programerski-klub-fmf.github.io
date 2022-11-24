@@ -1,0 +1,5 @@
+{{ if ( ne .at nil ) }}
+<a href="mailto: {{ .at }}">{{ .name }}</a>
+{{ else }}
+{{ .name }}
+{{ end }}

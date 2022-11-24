@@ -11,10 +11,18 @@
     <div class="card-content">
         <div class="content">
             Število zaužitih pic: 
+            {{ if gt .Params.pizzas_consumed 10 }}
             <span class="icon">
                 <i class="fas fa-pizza-slice"></i>
             </span>
             x {{ .Params.pizzas_consumed }}
+            {{ else }}
+            {{ range ( seq .Params.pizzas_consumed ) }}
+            <span class="icon">
+                <i class="fas fa-pizza-slice"></i>
+            </span>
+            {{ end }}
+            {{ end }}
             {{ .Content }}
             <br>
         </div>
