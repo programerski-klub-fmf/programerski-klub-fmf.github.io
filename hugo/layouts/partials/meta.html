@@ -1,5 +1,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://programerski-klub-fmf.github.io/">
+<meta property="og:title" content="Programerski klub FMF">
+<meta property="og:description" content="Programerski klub na Fakulteti za matematiko in fiziko Univerze Ljubljana">
+<meta property="og:image" content="/images/link_preview_image.png">
+<meta name="twitter:card" content="summary"></meta>
 {{ $sass := resources.Get "style/sass/mystyles.scss" }}
 {{ $style := $sass | resources.ToCSS | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
