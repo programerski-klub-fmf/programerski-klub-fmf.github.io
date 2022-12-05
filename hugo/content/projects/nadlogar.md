@@ -5,10 +5,8 @@ draft: false
 repository_link: "https://github.com/ul-fmf/nadlogar"
 contacts:
     - name:
-    - at:
+      at:
 ---
-
-# Nadlogar
 
 Nadlogar je spletna aplikacija za generiranje srednješolskih naloga za matematiko. *Python* osnovo za projekt je pripravila ??? v svoji magisterski nalogi. Programerski klub je ustrvaril *Django* aplikacijo/spletno stran, na kateri lahko generiramo izpite. 
 

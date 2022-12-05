@@ -1,19 +1,21 @@
-<article class="card">
-    <header class="card-header">
-        <p class="card-header-title">
-            <a href='{{ .Permalink }}'>
+<a href='{{ .Permalink }}' class="has-text-black">
+    <article class="card">
+        <header class="card-header">
+            <p class="card-header-title">
                 <span class="icon">
                     <i class="fas fa-code"></i>
                 </span>
                 &ensp;
                 {{ .Title }}
-            </a>
-        </p>
-    </header>
-    <div class="card-content">
-        <div class="content">
-            {{ .Content }}
-            <br>
+            </p>
+        </header>
+        <a href='{{ .Permalink }}' class="has-text-black">
+        <div class="card-content">
+            <div class="content">
+                {{ .Content }}
+                <br>
+            </div>
         </div>
-    </div>
-</article>
+        </a>
+    </article>
+</a>
