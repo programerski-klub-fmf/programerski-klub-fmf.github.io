@@ -6,6 +6,8 @@ draft: false
 
 # Programerski klub FMF
 
+![skupinska slika članov kluba](images/index_cats.png)
+
 ## Vizija
 
 Programiranje je osamljena dejavnost. A ni treba, da je temu tako. V Programerskem klubu se srečujemo, da navezujemo stike s programerji vrstniki; za imenjavo izkušenj; da se skupaj norčujemo iz zanič napisane kode; da z ostalimi delimo, kako smo po treh dneh truda naposle našli manjkajoče podpičje, zaradi katerega celoten projekt ni delal...
