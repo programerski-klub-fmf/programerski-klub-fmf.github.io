@@ -6,7 +6,12 @@ draft: false
 
 # Programerski klub FMF
 
-![skupinska slika članov kluba](images/index_cats.png)
+{{< rawhtml >}}
+<figure class="image">
+    <img src="images/index_cats.png" alt="skupinska slika članov kluba">
+</figure>
+{{< /rawhtml >}}
+
 
 ## Vizija
 
