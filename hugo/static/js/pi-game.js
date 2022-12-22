@@ -132,7 +132,11 @@ function restartPlay() {
 	difficulity = 3;
 	document.getElementById("playButton").hidden = true;
 	document.getElementById("reachedScore").hidden = true;
-	document.getElementById("nextNumber").hidden = false;
+    if ( document.getElementById("gameHardMode").checked ) {
+        document.getElementById("nextNumber").hidden = true;
+    } else {
+        document.getElementById("nextNumber").hidden = false;
+    }
 	document.getElementById("pickedNumbers").hidden = false;
 	// delete all numbers that are still visible
 	var numbers = document.getElementById("numbers");
