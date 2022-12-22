@@ -23,7 +23,7 @@ Hkrati želimo delati na resnih projektih in tako pridobiti resnične izkušnje 
 
 Člani Programerskega kluba se srečujemo vsak **četrtek** ob **15.** uri v učilnici **P.01** na Jadranski 21. Zapiski s rečanja so na voljo na tej spletni strani, v podzavihku **Srečanja**.
 
-## Discord strežnika
+## Discord strežnik
 
 V dejavnost Programerskega kluba se lahko najhitreje vključiš prek našega [*Discord*](https://discord.gg/HhZKQBVUea) strežnika. V nejm si z odzivom na na objavo v kanalu **#projekti** določiš vlogo, ki ti dodeli dostop do podkanalov različnih delovnih skupin. Obstaja tudi vloga Opazovalca, ki ti hkrati odpre kanale vseh projektov.
 
