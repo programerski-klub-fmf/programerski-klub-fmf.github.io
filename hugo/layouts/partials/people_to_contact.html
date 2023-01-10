@@ -4,7 +4,7 @@ Kontaktna oseba za zdaj še ni nastavljena
 {{ else }}
 Kontaktna oseba za ta projekt je
 {{ range .Params.contacts }}
-{{ partial "kontaktna_oseba" . }}
+{{ partial "person_to_contact" . }}
 {{ end }}
 {{ end }}
 {{ else }}
@@ -12,7 +12,7 @@ Kontaktne osebe za ta projekt so
 <ul>
     {{ range .Params.contacts }}
     <li>
-        {{ partial "kontaktna_oseba" . }}
+        {{ partial "person_to_contact" . }}
     </li>
     {{ end }}
 </ul>
