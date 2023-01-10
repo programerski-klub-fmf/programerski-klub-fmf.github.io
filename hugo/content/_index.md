@@ -6,6 +6,13 @@ draft: false
 
 # Programerski klub FMF
 
+{{< rawhtml >}}
+<figure class="image">
+    <img src="images/index_cats.png" alt="skupinska slika članov kluba">
+</figure>
+{{< /rawhtml >}}
+
+
 ## Vizija
 
 Programiranje je osamljena dejavnost. A ni treba, da je temu tako. V Programerskem klubu se srečujemo, da navezujemo stike s programerji vrstniki; za izmenjavo izkušenj; da se skupaj norčujemo iz zanič napisane kode; da z ostalimi delimo, kako smo po treh dneh truda naposle našli manjkajoče podpičje, zaradi katerega celoten projekt ni delal...
@@ -16,7 +23,7 @@ Hkrati želimo delati na resnih projektih in tako pridobiti resnične izkušnje 
 
 Člani Programerskega kluba se srečujemo vsak **četrtek** ob **15.** uri v učilnici **P.01** na Jadranski 21. Zapiski s rečanja so na voljo na tej spletni strani, v podzavihku **Srečanja**.
 
-## Discord strežnika
+## Discord strežnik
 
 V dejavnost Programerskega kluba se lahko najhitreje vključiš prek našega [*Discord*](https://discord.gg/HhZKQBVUea) strežnika. V nejm si z odzivom na na objavo v kanalu **#projekti** določiš vlogo, ki ti dodeli dostop do podkanalov različnih delovnih skupin. Obstaja tudi vloga Opazovalca, ki ti hkrati odpre kanale vseh projektov.
 
