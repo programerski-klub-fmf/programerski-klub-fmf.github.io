@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ .Content }}
 
-{{ range .Paginator.Pages }}
+{{ range .Paginator.Pages.ByTitle }}
 <div class="block">
     {{ partial "meeting_card.html" . }}
 </div>
