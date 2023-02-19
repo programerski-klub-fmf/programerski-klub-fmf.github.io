@@ -1,10 +1,12 @@
 {{ define "main" }}
 {{ .Content }}
 
-{{ range .Paginator.Pages.ByDate }}
+{{ range .Paginator.Pages.ByDate.Reverse }}
 <div class="block">
     {{ partial "meeting_card.html" . }}
 </div>
 {{ end }}
+
+{{ template "_internal/pagination.html" . }}
 
 {{ end }}
