@@ -7,21 +7,41 @@ $lighter-red: #e5c0c6;
 $brown: #757763;
 $beige-light: #D0D1CD;
 $beige-lighter: #EFF0EB;
+$green: #00FF00;
+$pink: rgb(212, 51, 150);
 
 // Update Bulma's global variables
-$primary: $red;
-$primary-light: $beige-light;
+$white: #FFFFFF;
+$black: #000000;
+$light: $white;
+$dark: $black;
+$primary: $green;
+$link: $green;
+$info: $green;
+$success: $pink;
+$warning: $pink;
+$danger: $pink;
 
 $widescreen-enabled: true;
 $fullhd-enabled: false;
 
+$navbar-item-color: $light;
+
 // Update some of Bulma's component variables
-$body-background-color: $beige-lighter;
+$body-background-color: $dark;
 // mogoče bi bilo bolje, če ne bi bile bele (default vrednost) ampak svetlo rdeče ne zgedajo dobro
-$navbar-background-color: $light-red;
-$navbar-item-hover-background-color: $lighter-red;
-//$footer-background-color: $light-red;
-$card-header-background-color: $light-red;
+
+
+$navbar-background-color: $dark;
+$navbar-item-hover-background-color: $primary;
+$navbar-box-shadow-size: 0 0 10px 0;
+$navbar-box-shadow-color: $green;
+
+$card-color: $light;
+$card-header-color: $light;
+$card-background-color: $dark;
+$card-radius: 0;
+$card-shadow: 0 0 10px $green;
 
 // Import only what you need from Bulma
 @import "../bulma/sass/grid/columns.sass";
