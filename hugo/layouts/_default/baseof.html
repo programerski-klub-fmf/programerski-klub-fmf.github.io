@@ -25,10 +25,10 @@
 
 <body>
     <canvas id="c" style="position: absolute; overflow:hidden;"></canvas>
-    <div style="position: relative; height:100vh; overflow:scroll;">
+    <div id="content-over-canvas" style="position: relative; height:100vh; overflow:scroll;">
         {{ partial "navbar" . }}
     
-        <main class="container py-2 px-6" style="min-height:100vh;" aria-role="main">
+        <main id="main" class="container py-2 px-6" style="min-height:100vh;" aria-role="main">
             {{ block "main" . }}{{ end }}
         </main>
     

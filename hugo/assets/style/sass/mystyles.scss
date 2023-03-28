@@ -1,14 +1,9 @@
 @charset "utf-8";
 
 // Set your brand colors
-$red: #B4162C; 
-$light-red: #d4b3b8;
-$lighter-red: #e5c0c6;
-$brown: #757763;
-$beige-light: #D0D1CD;
-$beige-lighter: #EFF0EB;
 $green: #00FF00;
-$pink: rgb(212, 51, 150);
+$pink: #FF729F;
+$orange: #F58A07;
 
 // Update Bulma's global variables
 $white: #FFFFFF;
@@ -27,17 +22,21 @@ $fullhd-enabled: false;
 
 $navbar-item-color: $light;
 
+$text: $light;
+$text-light: $light;
+$text-strong: $light;
+
 // Update some of Bulma's component variables
 $body-background-color: $dark;
 // mogoče bi bilo bolje, če ne bi bile bele (default vrednost) ampak svetlo rdeče ne zgedajo dobro
 
 
 $navbar-background-color: $dark;
-$navbar-item-hover-background-color: $primary;
+$navbar-item-hover-background-color: $dark;
+$navbar-item-hover-color: $primary ;
 $navbar-box-shadow-size: 0 0 10px 0;
 $navbar-box-shadow-color: $green;
 
-$card-color: $light;
 $card-header-color: $light;
 $card-background-color: $dark;
 $card-radius: 0;

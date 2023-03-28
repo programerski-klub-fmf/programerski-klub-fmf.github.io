@@ -1,13 +1,11 @@
 {{ define "main" }}
-<div class="content">
-    <p>
-        <!-- Note that the content for index.html, as a sort of list page, will pull from content/_index.md -->
-        {{.Content}}
-    </p>
-</div>
-<div>
-    {{ range first 10 .Site.RegularPages }}
-    {{ .Render "summary" }}
+<section id="index-homepage" class="content">
+    {{.Content}}
+
+    {{ range .RegularPages }}
+    <div id="index-homepage-card-block-{{.Title}}" class="block">
+        {{ partial "homepage_item.html" . }}
+    </div>
     {{ end }}
-</div>
+</section>
 {{ end }}

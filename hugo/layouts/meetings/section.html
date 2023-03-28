@@ -2,7 +2,7 @@
 {{ .Content }}
 
 {{ range .Paginator.Pages.ByDate.Reverse }}
-<div class="block">
+<div id="meetings-section-card-block-{{.Title}}" class="block">
     {{ partial "meeting_card.html" . }}
 </div>
 {{ end }}
