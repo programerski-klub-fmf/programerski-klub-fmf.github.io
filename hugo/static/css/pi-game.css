@@ -7,12 +7,12 @@
 	word-break: break-all;
 }
 .blueText {
-	color: #58b5e0;
+	color: #0f0;
 }
 .pi-game-number { /* Bulma has a class named number and it conflicts with this if it's just called number */
 	position: absolute;
 	font-size: 50px;
-	color: #fff; 
+	color: #0f0; 
 	touch-action: none;
 	pointer-events: none;
 }
@@ -29,8 +29,8 @@
 #canvas {
 	overflow: hidden;
 	position: relative;
-	background-color: #bbb;
-	border:1px solid #d3d3d3;
+	background-color: #000;
+	border:1px solid #fff;
 	width:100%;
 	height:400px;
 	display: flex;

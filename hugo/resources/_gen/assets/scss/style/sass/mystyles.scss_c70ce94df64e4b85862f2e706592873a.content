@@ -1282,7 +1282,7 @@ table th {
     transform: rotate(359deg); } }
 
 .footer {
-  background-color: #fafafa;
+  background-color: #000000;
   padding: 3rem 1.5rem 6rem; }
 
 .navbar {

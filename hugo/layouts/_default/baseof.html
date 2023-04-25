@@ -8,25 +8,14 @@
     {{ end }}
 
     {{ partialCached "meta" . }}
-    <style>
-        /* By Boujjou Achraf*/
-
-        /*basic reset */
-                    
-        *{
-            margin: 0;
-            padding: 0;
-        }
-
-        body {background: black;}
-        canvas {display:block;}
-    </style>
 </head>
 
 <body>
     <canvas id="c" style="position: absolute; overflow:hidden;"></canvas>
     <div id="content-over-canvas" style="position: relative; height:100vh; overflow:scroll;">
         {{ partial "navbar" . }}
+
+        
     
         <main id="main" class="container py-2 px-6" style="min-height:100vh;" aria-role="main">
             {{ block "main" . }}{{ end }}
