@@ -999,7 +999,7 @@
   transform-origin: center;
   width: 0.625em; }
 
-.block:not(:last-child), .title:not(:last-child),
+.box:not(:last-child), .block:not(:last-child), .title:not(:last-child),
 .subtitle:not(:last-child), .content:not(:last-child), .level:not(:last-child) {
   margin-bottom: 1.5rem; }
 
@@ -4021,3 +4021,17 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 .has-background-white-bis {
   background-color: #fafafa !important; }
+
+.box {
+  background-color: #000000;
+  border-radius: 0;
+  box-shadow: 0 0 10px #00FF00;
+  color: #FFFFFF;
+  display: block;
+  padding: 1.25rem; }
+
+a.box:hover, a.box:focus {
+  box-shadow: 0 0.5em 1em -0.125em rgba(0, 0, 0, 0.1), 0 0 0 1px #00FF00; }
+
+a.box:active {
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 1px #00FF00; }

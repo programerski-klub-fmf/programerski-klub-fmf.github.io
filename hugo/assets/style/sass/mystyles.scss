@@ -48,6 +48,10 @@ $card-background-color: $dark;
 $card-radius: 0;
 $card-shadow: 0 0 10px $green;
 
+$box-background-color: $dark;
+$box-radius: 0;
+$box-shadow: 0 0 10px $green;
+
 // Import only what you need from Bulma
 @import "../bulma/sass/grid/columns.sass";
 @import "../bulma/sass/utilities/_all.sass";
@@ -64,4 +68,5 @@ $card-shadow: 0 0 10px $green;
 @import "../bulma/sass/elements/other.sass";
 @import "../bulma/sass/helpers/spacing.sass";
 @import "../bulma/sass/helpers/color.sass";
+@import "../bulma/sass/elements/box.sass";
 
