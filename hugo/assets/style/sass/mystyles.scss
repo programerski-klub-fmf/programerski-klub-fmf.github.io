@@ -52,6 +52,14 @@ $box-background-color: $dark;
 $box-radius: 0;
 $box-shadow: 0 0 10px $green;
 
+$button-color: $green;
+$button-background-color: $dark;
+$button-border-color: $green;
+
+$button-border-hover-color: $light;
+$button-hover-color: $light;
+
+
 // Import only what you need from Bulma
 @import "../bulma/sass/grid/columns.sass";
 @import "../bulma/sass/utilities/_all.sass";
