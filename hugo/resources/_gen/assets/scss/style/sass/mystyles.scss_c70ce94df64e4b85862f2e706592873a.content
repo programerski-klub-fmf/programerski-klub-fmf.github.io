@@ -1,6 +1,7 @@
 .pagination-link {
   background-color: #000000;
-  border-radius: 0 !important; }
+  border-radius: 0 !important;
+  fill: #FFFFFF !important; }
 
 .column {
   display: block;

@@ -31,12 +31,20 @@
     
     <!-- First page. -->
     {{ if ne $paginator.PageNumber 1 }}
-    <li><a class="pagination-link" aria-label="Goto page first" href="{{ $paginator.First.URL }}">««</a></li> 
+    <li><a class="pagination-link" aria-label="Goto page first" href="{{ $paginator.First.URL }}">
+      <span class="icon">
+        <i class="fas fa-angles-left"></i>
+      </span>
+    </a></li> 
     {{ end }}
 
     <!-- Previous page. -->
     {{ if $paginator.HasPrev }}
-    <li><a class="pagination-link" aria-label="Goto page previus" href="{{ $paginator.Prev.URL }}">«</a></li> 
+    <li><a class="pagination-link" aria-label="Goto page previus" href="{{ $paginator.Prev.URL }}">
+      <span class="icon">
+        <i class="fas fa-chevron-left"></i>
+      </span>
+    </a></li> 
     {{ end }}
   
     <!-- Page numbers. -->
@@ -95,12 +103,20 @@
 
     <!-- Next page. -->
     {{ if $paginator.HasNext }}
-    <li><a class="pagination-link" aria-label="Goto page next" href="{{ $paginator.Next.URL }}">»</a></li> 
+    <li><a class="pagination-link" aria-label="Goto page next" href="{{ $paginator.Next.URL }}">
+      <span class="icon">
+        <i class="fas fa-chevron-right"></i>
+      </span>
+    </a></li> 
     {{ end }}
 
     <!-- Last page. -->
     {{ if ne $paginator.PageNumber $paginator.TotalPages }}
-    <li><a class="pagination-link" aria-label="Goto page last" href="{{ $paginator.Last.URL }}">»»</a></li> 
+    <li><a class="pagination-link" aria-label="Goto page last" href="{{ $paginator.Last.URL }}">
+      <span class="icon">
+        <i class="fas fa-angles-right"></i>
+      </span>
+    </a></li> 
     {{ end }}
   {{ end }}
   </ul>
