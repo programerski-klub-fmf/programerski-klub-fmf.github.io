@@ -5,13 +5,15 @@
 <meta property="og:title" content="Programerski klub FMF">
 <meta property="og:description" content="Programerski klub na Fakulteti za matematiko in fiziko Univerze Ljubljana">
 <meta property="og:image" content="/images/link_preview_image.png">
-<meta name="twitter:card" content="summary"></meta>
+<meta name="twitter:card" content="summary">
 {{ $sass := resources.Get "style/sass/mystyles.scss" }}
 {{ $style := $sass | resources.ToCSS | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
 <link href="/css/pi-game.css" rel="stylesheet">
 <script type="text/javascript" charset="utf-8" src="/js/navbar-burger.js"></script>
 <script type="text/javascript" charset="utf-8" src="/js/cookies.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/matrix.js" defer></script>
+<link href="/css/sun-rays.css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/5cd95319b6.js" crossorigin="anonymous"></script>
 <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png">

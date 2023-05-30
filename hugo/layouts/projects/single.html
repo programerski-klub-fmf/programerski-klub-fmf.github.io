@@ -1,38 +1,41 @@
 {{ define "main" }}
-<section id="main">
+<div id="{{ .Title }}-project-single-box" class="box">
+  <section id="main">
     <h1 class="title">{{ .Title }}</h1>
     <div>
-        <article class="content">
-            {{ .Content }}
-        </article>
+      <article class="content">
+        {{ .Content }}
+      </article>
     </div>
-</section>
-<hr>
-<aside id="meta">
+  </section>
+  <hr>
+  <aside id="meta">
     <div>
-        <section class="content">
-            <p>
-                {{ partial "people_to_contact" . }}
-            </p>
-        </section>
+      <section class="content">
+        <p>
+          {{ partial "people_to_contact" . }}
+        </p>
+      </section>
     </div>
     <nav class="level">
-        <!-- Left side -->
-        <div class="level-left">
-            <p class="level-item">
-                {{ with .PrevInSection }}
-                <a class="previous" href="{{.Permalink}}"> ←&nbsp{{.Title}}</a>
-                {{ end }}
-            </p>
-        </div>
+      <!-- Left side -->
+      <div class="level-left">
+        <p class="level-item">
+          {{ with .PrevInSection }}
+          <a class="previous" href="{{.Permalink}}"> ←&nbsp{{.Title}}</a>
+          {{ end }}
+        </p>
+      </div>
 
-        <div class="level-right">
-            <p class="level-item">
-                {{ with .NextInSection }}
-                <a class="next" href="{{.Permalink}}"> {{.Title}}&nbsp→</a>
-                {{ end }}
-            </p>
-        </div>
+      <div class="level-right">
+        <p class="level-item">
+          {{ with .NextInSection }}
+          <a class="next" href="{{.Permalink}}"> {{.Title}}&nbsp→</a>
+          {{ end }}
+        </p>
+      </div>
     </nav>
-</aside>
+  </aside>
+</div>
+
 {{ end }}

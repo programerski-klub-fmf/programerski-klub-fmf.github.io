@@ -1,5 +1,5 @@
-<article class="card">
-    <header class="card-header">
+<article id="meeting_card-card-{{.Title}}" class="card">
+    <header id="meeting_card-card-header-{{.Title}}" class="card-header">
         <p class="card-header-title">
             <span class="icon">
                 <i class="fas fa-calendar-days"></i>
@@ -8,7 +8,7 @@
             {{ .Title }}
         </p>
     </header>
-    <div class="card-content">
+    <div id="meeting_card-card-content-{{.Title}}" class="card-content">
         <div class="content">
             Število zaužitih pic: 
             {{ if gt .Params.pizzas_consumed 10 }}

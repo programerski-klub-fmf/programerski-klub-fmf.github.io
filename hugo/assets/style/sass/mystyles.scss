@@ -1,27 +1,68 @@
 @charset "utf-8";
 
 // Set your brand colors
-$red: #B4162C; 
-$light-red: #d4b3b8;
-$lighter-red: #e5c0c6;
-$brown: #757763;
-$beige-light: #D0D1CD;
-$beige-lighter: #EFF0EB;
+$green: #00FF00;
+$pink: #FF729F;
+$orange: #F58A07;
 
 // Update Bulma's global variables
-$primary: $red;
-$primary-light: $beige-light;
+$white: #FFFFFF;
+$black: #000000;
+$light: $white;
+$dark: $black;
+$primary: $green;
+$link: $green;
+$info: $green;
+$success: $pink;
+$warning: $pink;
+$danger: $pink;
 
 $widescreen-enabled: true;
 $fullhd-enabled: false;
 
+$navbar-item-color: $light;
+
+$text: $light;
+$text-light: $light;
+$text-strong: $light;
+
 // Update some of Bulma's component variables
-$body-background-color: $beige-lighter;
+$body-background-color: $dark;
 // mogoče bi bilo bolje, če ne bi bile bele (default vrednost) ampak svetlo rdeče ne zgedajo dobro
-$navbar-background-color: $light-red;
-$navbar-item-hover-background-color: $lighter-red;
-//$footer-background-color: $light-red;
-$card-header-background-color: $light-red;
+
+
+$navbar-background-color: $dark;
+$navbar-item-hover-background-color: $dark;
+$navbar-item-hover-color: $primary ;
+$navbar-box-shadow-size: 0 0 10px 0;
+$navbar-box-shadow-color: $green;
+
+$footer-background-color: $dark;
+$footer-item-hover-background-color: $dark;
+$footer-item-hover-color: $primary ;
+$footer-box-shadow-size: 0 0 0 10px;
+$footer-box-shadow-color: $green;
+
+$card-header-color: $light;
+$card-background-color: $dark;
+$card-radius: 0;
+$card-shadow: 0 0 10px $green;
+
+$box-background-color: $dark;
+$box-radius: 0;
+$box-shadow: 0 0 10px $green;
+
+$button-color: $green;
+$button-background-color: $dark;
+$button-border-color: $green;
+
+$button-border-hover-color: $light;
+$button-hover-color: $light;
+
+$pagination-hover-color: $green;
+$pagination-hover-border-color: $green;
+
+.pagination-link {background-color: $dark; border-radius: 0 !important; fill: $light !important;}
 
 // Import only what you need from Bulma
 @import "../bulma/sass/grid/columns.sass";
@@ -39,4 +80,7 @@ $card-header-background-color: $light-red;
 @import "../bulma/sass/elements/other.sass";
 @import "../bulma/sass/helpers/spacing.sass";
 @import "../bulma/sass/helpers/color.sass";
+@import "../bulma/sass/elements/box.sass";
+@import "../bulma/sass/helpers/typography.sass";
+@import "../bulma/sass/components/pagination.sass";
 

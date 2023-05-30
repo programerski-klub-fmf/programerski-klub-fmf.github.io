@@ -1,21 +1,17 @@
-<a href='{{ .Permalink }}' class="has-text-black">
-    <article class="card">
-        <header class="card-header">
-            <p class="card-header-title">
-                <span class="icon">
-                    <i class="fas fa-code"></i>
-                </span>
-                &ensp;
-                {{ .Title }}
-            </p>
-        </header>
-        <a href='{{ .Permalink }}' class="has-text-black">
-        <div class="card-content">
-            <div class="content">
-                {{ .Content }}
-                <br>
-            </div>
-        </div>
+<article id="project_card-card-{{.Title}}" class="card">
+    <header id="project_card-card-header-{{.Title}}" class="card-header">
+        <a href="{{.Permalink}}" class="card-header-title">
+            <span class="icon">
+                <i class="fas fa-calendar-days"></i>
+            </span>
+            &ensp;
+            {{ .Title }}
         </a>
-    </article>
-</a>
+    </header>
+    <div id="project_card-card-content-{{.Title}}" class="card-content">
+        <div class="content">
+            {{ .Content }}
+            <br>
+        </div>
+    </div>
+</article>

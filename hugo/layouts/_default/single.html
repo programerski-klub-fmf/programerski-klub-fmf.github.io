@@ -1,11 +1,9 @@
 {{ define "main" }}
-<section id="main">
-    <h1 class="title">{{ .Title }}</h1>
-    <div>
-        <article class="content">
-            {{ .Content }}
-        </article>
-    </div>
+<section id="single-{{.Title}}">
+    <h1 id="single-title-{{.Title}}" class="title">{{ .Title }}</h1>
+    <article id="single-content-{{.Title}}" class="content">
+        {{ .Content }}
+    </article>
 </section>
 <hr>
 <aside id="meta">

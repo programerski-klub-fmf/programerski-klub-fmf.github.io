@@ -1,0 +1,17 @@
+<article id="homepage_item-card-{{.Title}}" class="card">
+    <header id="homepage_item-card-header-{{.Title}}" class="card-header">
+        <p class="card-header-title">
+            <span class="icon">
+                <i class="fas fa-calendar-days"></i>
+            </span>
+            &ensp;
+            {{ .Title }}
+        </p>
+    </header>
+    <div id="homepage_item-card-content-{{.Title}}" class="card-content">
+        <div class="content">
+            {{ .Content }}
+            <br>
+        </div>
+    </div>
+</article>
