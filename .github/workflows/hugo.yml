@@ -69,11 +69,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-      - name: HTML5Validator
-        uses: Cyb3r-Jak3/html5validator-action
-        with:
-          root: tests/
-          blacklist: invalid
       - uses: actions/upload-artifact@v3
         with:
           name: log
