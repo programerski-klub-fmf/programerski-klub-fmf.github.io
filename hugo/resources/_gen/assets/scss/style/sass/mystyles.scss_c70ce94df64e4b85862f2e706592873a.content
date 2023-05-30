@@ -1,3 +1,7 @@
+.pagination-link {
+  background-color: #000000;
+  border-radius: 0 !important; }
+
 .column {
   display: block;
   flex-basis: 0;
@@ -4374,8 +4378,8 @@ a.box:active {
   .pagination-previous:hover,
   .pagination-next:hover,
   .pagination-link:hover {
-    border-color: #b5b5b5;
-    color: #363636; }
+    border-color: #00FF00;
+    color: #00FF00; }
   .pagination-previous:focus,
   .pagination-next:focus,
   .pagination-link:focus {

@@ -59,6 +59,10 @@ $button-border-color: $green;
 $button-border-hover-color: $light;
 $button-hover-color: $light;
 
+$pagination-hover-color: $green;
+$pagination-hover-border-color: $green;
+
+.pagination-link {background-color: $dark; border-radius: 0 !important;}
 
 // Import only what you need from Bulma
 @import "../bulma/sass/grid/columns.sass";
@@ -79,3 +83,4 @@ $button-hover-color: $light;
 @import "../bulma/sass/elements/box.sass";
 @import "../bulma/sass/helpers/typography.sass";
 @import "../bulma/sass/components/pagination.sass";
+
