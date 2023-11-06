@@ -8,12 +8,13 @@
             strežnik kluba
         </a>
 
-        <p id="footer-cas-in-kraj-srecanj"> Dobivamo se vsak ponedeljek ob 16.15 v P.01 </p>
+        <p id="footer-cas-in-kraj-srecanj"> Dobivamo se vsak {{ .Site.Data.meetings.day }} ob {{ .Site.Data.meetings.time }}  v {{ .Site.Data.meetings.place }}.</p>
 
         <figure id="figure-logo-fmf" class="image">
             <a href="https://www.fmf.uni-lj.si/">
-                <img id="img-logo-fmf" src="images/logo_fmf.png" width="200" height="200"
-                    alt="Logotip Fakultete za matematiko in fiziko Univerze v Ljubljani">
+                <img id="img-logo-fmf" src="/images/logo_fmf.png" width="200" height="200"
+                    alt="Logotip Fakultete za matematiko in fiziko Univerze v Ljubljani"
+                    target="_blank" rel="noopener noreferrer">
             </a>
         </figure>
 
@@ -23,15 +24,17 @@
 
             <figure id="figure-logo-abelium" class="column image">
                 <a href="https://abelium.com/">
-                    <img id="img-logo-abelium" src="images/logo_abelium.png" width="200" height="200"
-                        alt="Logotip podjetja Abelium d.o.o.">
+                    <img id="img-logo-abelium" src="/images/logo_abelium.png" width="200" height="200"
+                        alt="Logotip podjetja Abelium d.o.o."
+                        target="_blank" rel="noopener noreferrer">
                 </a>
             </figure>
 
             <figure id="figure-logo-acex" class="column image">
                 <a href="https://acex.si/">
-                    <img id="img-logo-abelium" src="images/logo_acex.png" width="200" height="200"
-                        alt="Logotip podjetja ACEX d.o.o.">
+                    <img id="img-logo-abelium" src="/images/logo_acex.png" width="200" height="200"
+                        alt="Logotip podjetja ACEX d.o.o."
+                        target="_blank" rel="noopener noreferrer">
                 </a>
             </figure>
 
