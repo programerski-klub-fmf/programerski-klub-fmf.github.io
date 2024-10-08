@@ -1,6 +1,7 @@
 ---
 title: "Srečanja"
 date: 2023-03-28T17:27:45+02:00
+priority: 50
 draft: false
 ---
 

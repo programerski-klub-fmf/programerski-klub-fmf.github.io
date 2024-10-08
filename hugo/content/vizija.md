@@ -1,6 +1,7 @@
 ---
 title: "Vizija"
 date: 2023-03-28T17:27:26+02:00
+priority: 30
 draft: false
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Discord strežnik"
 date: 2023-03-28T17:27:57+02:00
+priority: 40
 draft: false
 ---
 
