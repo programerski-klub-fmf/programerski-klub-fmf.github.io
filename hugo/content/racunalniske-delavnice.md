@@ -1,6 +1,7 @@
 ---
 title: "Računalniške delavnice"
 date: 2022-10-27T15:19:38+02:00
+priority: 10
 draft: false
 ---
 

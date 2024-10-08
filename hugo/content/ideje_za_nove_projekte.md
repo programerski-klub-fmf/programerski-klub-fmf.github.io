@@ -1,6 +1,7 @@
 ---
 title: "Ideje za nove projekte"
 date: 2023-03-28T17:28:23+02:00
+priority: 20
 draft: false
 ---
 

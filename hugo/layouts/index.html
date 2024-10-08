@@ -13,7 +13,7 @@
         {{ end }}
     </section>
 
-    {{ range .RegularPages }}
+    {{ range (sort .RegularPages ".Params.priority" "desc") }}
     <section id="index-homepage-card-section-{{.Title}}" class="section">
         {{ partial "homepage_item.html" . }}
     </section>
