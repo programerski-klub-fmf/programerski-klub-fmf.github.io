@@ -1,11 +1,11 @@
 {{ define "main" }}
 <div id="index-homepage" class="content">
 
-    <section id="index-homepage-index-content-section" class="section block">
+    <section id="index-homepage-index-content-section" class="section">
         {{ .Content }}
     </section>
 
-    <section id="index-homepage-latest-news-section" class="section block">
+    <section id="index-homepage-latest-news-section" class="section">
         {{ range where .Pages "Section" "news" }}
         {{ range first 1 .RegularPages }}
         {{ partial "homepage_item.html" . }}
@@ -14,7 +14,7 @@
     </section>
 
     {{ range .RegularPages }}
-    <section id="index-homepage-card-section-{{.Title}}" class="section block">
+    <section id="index-homepage-card-section-{{.Title}}" class="section">
         {{ partial "homepage_item.html" . }}
     </section>
     {{ end }}

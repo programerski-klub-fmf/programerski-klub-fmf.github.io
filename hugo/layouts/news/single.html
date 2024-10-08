@@ -1,5 +1,14 @@
 {{ define "main" }}
 <section id="single-card-{{.Title}}" class="card">
+    {{ $image := .Resources.Get (.Params.cover_image) }}
+    {{ with $image }}
+    <div class="card-image">
+        <figure class="image is-fullwidth">
+            <img src="{{ .RelPermalink }}" alt="Naslovnica novice" />
+        </figure>
+    </div>
+    {{ end }}
+
     <div id="single-card-content-{{.Title}}" class="card-content">
         <h1 id="single-title-{{.Title}}" class="title">{{ .Title }}</h1>
         <article id="single-content-{{.Title}}" class="content">
@@ -36,7 +45,7 @@
                         {{ end }}
                     </p>
                 </div>
-        
+
                 <div class="level-right">
                     <p class="level-item">
                         {{ with .NextInSection }}

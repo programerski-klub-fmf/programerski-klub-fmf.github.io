@@ -3,7 +3,7 @@ title: "Uvodno Srecanje 2024/2025"
 summary: "Uvodno srečanje bo v **četrtek, 10. 10. 2024, ob 15h v P.01** na Jadranski 21."
 date: 2024-10-08T09:31:57+02:00
 draft: false
-cover_image: "hugo/static/images/index_cats.png"
+cover_image: 
 ---
 
 Pozdravljeni,

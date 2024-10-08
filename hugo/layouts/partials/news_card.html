@@ -1,0 +1,24 @@
+<article id="news_card-card-{{ .Title }}" class="card">
+    {{ $image := .Resources.Get (.Params.cover_image) }}
+    {{ with $image }}
+    <div class="card-image">
+        <figure class="image is-fullwidth">
+            <img
+            src="{{ .RelPermalink }}"
+            alt="Naslovnica novice"
+            />
+        </figure>
+    </div>
+    {{ end }}
+    
+    <div id="news_card-card-content-{{ .Title }}" class="card-content">
+        <div class="content">
+            {{ partial "summary.html" . }}
+            <br>
+            <time class="has-text-success has-text-weight-light">{{ .Date | time.Format ":date_long" }}</time>
+        </div>
+    </div>
+
+    <footer id="news_card-card-footer-{{ .Title }}" class="card-footer">
+    </footer>
+</article>
