@@ -45,7 +45,14 @@ Your file is located at `./your-fork-name/hugo/content/projects/file-name.md`.
 hugo new project-ideas/file-name.md
 ```
 
-Your file is located at `./your-fork-name/hugo/content/project-ideas/file-name.md`. 
+Your file is located at `./your-fork-name/hugo/content/project-ideas/file-name.md`.
+
+### News
+```
+hugo new news/folder-name
+```
+
+Your folder is located at `./your-fork-name/hugo/content/project-ideas/folder-name`. 
 
 ---
 
