@@ -15,7 +15,6 @@ Vabljene vse programerke in programerji, pa tudi tisti, ki morda nimate programe
 Prihodnja srečanja bodo potekala vsako sredo, prav tako ob 16ih v P.01, kjer:
 - organiziramo računalniške delavnice (tekmovalno programiranje, git, nixos, ...)
 - delamo na projektih ([jelka s programabilnimi lučkami](https://www.fmf.uni-lj.si/sl/obvestila/obvestilo/36894/jelka-z-luckami-ki-jih-lahko-programiramo/), ...)
-- sodelujemo z industrijo (med drugim s podjetjema [ACEX](https://www.acex.si/ "https://www.acex.si/") in [Abelium](https://abelium.com/ "https://abelium.com/"), ki sponzorirata programerski klub)
 - jemo pice
 
 Pridružite se nam torej na uvodnem sestanku (lahko pa tudi kasneje) tako, da se prijavite na Discord strežnik programerskega kluba ([https://discord.gg/ccg4nKVR44](https://discord.gg/ccg4nKVR44 "https://discord.gg/ccg4nKVR44")) in označite vašo izbiro pice. 
