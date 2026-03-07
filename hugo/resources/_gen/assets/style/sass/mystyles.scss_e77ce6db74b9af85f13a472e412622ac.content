@@ -2164,7 +2164,7 @@ a.navbar-item,
 
 .card-header-title {
   align-items: center;
-  color: #FFFFFF;
+  color: #00FF00;
   display: flex;
   flex-grow: 1;
   font-weight: 700;
@@ -2619,7 +2619,7 @@ a.navbar-item,
 
 .subtitle {
   color: #FFFFFF;
-  font-size: 1.25rem;
+  font-size: 2em;
   font-weight: 400;
   line-height: 1.25; }
   .subtitle strong {

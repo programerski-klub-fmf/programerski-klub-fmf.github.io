@@ -31,6 +31,9 @@ $body-background-color: $dark;
 // mogoče bi bilo bolje, če ne bi bile bele (default vrednost) ampak svetlo rdeče ne zgedajo dobro
 
 
+$subtitle-size: 2em;
+
+
 $navbar-background-color: $dark;
 $navbar-item-hover-background-color: $dark;
 $navbar-item-hover-color: $primary ;
@@ -43,7 +46,7 @@ $footer-item-hover-color: $primary ;
 $footer-box-shadow-size: 0 0 0 10px;
 $footer-box-shadow-color: $green;
 
-$card-header-color: $light;
+$card-header-color: $green;
 $card-background-color: $dark;
 $card-footer-border-top: 0px;
 $card-radius: 0;
