@@ -1,0 +1,20 @@
+<article id="workshop_card-card-{{.Title}}" class="card">
+    <header id="workshop_card-card-header-{{.Title}}" class="card-header">
+        <p class="card-header-title">
+            <span class="icon">
+                <i class="fas fa-calendar-days"></i>
+            </span>
+            &ensp;
+            {{ .Params.title_date }}: {{ .Title }}
+            
+        </p>
+    </header>
+    <div id="workshop_card-card-content-{{.Title}}" class="card-content">
+        <!-- <h1>{{ .Title }}</h1> -->
+        <h2><strong>{{ .Params.presenter }}</strong></h2>
+        <div class="content">
+            {{ .Content }}
+            <br>
+        </div>
+    </div>
+</article>
