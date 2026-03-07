@@ -5,4 +5,4 @@ priority: 50
 draft: false
 ---
 
-Člani Programerskega kluba se srečujemo vsak **{{< day >}}** ob **{{< time >}}** v učilnici **{{< place >}}** na Jadranski 21. Zapiski s srečanj so na voljo na tej spletni strani, v podzavihku **Srečanja**.
+Člani Programerskega kluba se srečujemo vsak **{{< day >}}** ob **{{< time >}}** v učilnici **{{< place >}}** na Jadranski 21.
