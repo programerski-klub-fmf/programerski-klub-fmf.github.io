@@ -2,3 +2,12 @@ baseURL = 'http://programerski-klub-fmf.github.io/'
 languageCode = 'en-us'
 defaultContentLanguage = 'sl'
 title = 'Programerski klub FMF'
+
+# Source - https://stackoverflow.com/a/63206852
+# Posted by n m, modified by community. See post 'Timeline' for change history
+# Retrieved 2026-03-09, License - CC BY-SA 4.0
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
