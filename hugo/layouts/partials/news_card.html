@@ -1,8 +1,8 @@
 <article id="news_card-card-{{ .Title }}" class="card">
     {{ $image := .Resources.Get (.Params.cover_image) }}
     {{ with $image }}
-    <div class="card-image">
-        <figure class="image is-fullwidth">
+    <div class="card-image" style="text-align: center;">
+        <figure class="image is-halfwidth center">
             <img
             src="{{ .RelPermalink }}"
             alt="Naslovnica novice"

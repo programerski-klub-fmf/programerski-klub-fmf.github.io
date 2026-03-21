@@ -2494,7 +2494,8 @@ a.navbar-item,
       max-width: 1152px; } }
 .image {
   display: block;
-  position: relative; }
+  position: relative;
+  margin: 0 auto; }
   .image img {
     display: block;
     height: auto;
@@ -2503,6 +2504,8 @@ a.navbar-item,
       border-radius: 9999px; }
   .image.is-fullwidth {
     width: 100%; }
+  .image.is-halfwidth {
+    width: 50%; }
   .image.is-square img,
   .image.is-square .has-ratio, .image.is-1by1 img,
   .image.is-1by1 .has-ratio, .image.is-5by4 img,

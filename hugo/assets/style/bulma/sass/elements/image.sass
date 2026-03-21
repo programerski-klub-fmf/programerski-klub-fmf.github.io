@@ -5,6 +5,7 @@ $dimensions: 16 24 32 48 64 96 128 !default
 .image
   display: block
   position: relative
+  margin: 0 auto
   img
     display: block
     height: auto
@@ -13,6 +14,8 @@ $dimensions: 16 24 32 48 64 96 128 !default
       border-radius: $radius-rounded
   &.is-fullwidth
     width: 100%
+  &.is-halfwidth
+    width: 50%
   // Ratio
   &.is-square,
   &.is-1by1,
