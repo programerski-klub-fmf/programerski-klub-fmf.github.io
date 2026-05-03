@@ -167,7 +167,7 @@ jobs:
           PROXY_USER: ${{ vars.PROGKLUB_PROXY_USER }}
           PROXY_SOCKS_PORT: "1921"
         run: |
-          echo "RCLONE_CONFIG_SFTP_SOCKS_PROXY=localhost:${PROXY_SOCKS_PORT}" >> "${GITHUB_ENV}"
+          echo "RCLONE_SFTP_SOCKS_PROXY=localhost:${PROXY_SOCKS_PORT}" >> "${GITHUB_ENV}"
           echo "Starting SSH SOCKS proxy to ${PROXY_USER}@${PROXY_HOST} on port ${PROXY_SOCKS_PORT}..."
           ssh -N -D "${PROXY_SOCKS_PORT}" -i ~/.ssh/proxy_private_key "${PROXY_USER}@${PROXY_HOST}" &
           echo "Started SSH SOCKS proxy with PID $!!"
