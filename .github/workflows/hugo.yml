@@ -158,6 +158,7 @@ jobs:
           RCLONE_CONFIG_PROGKLUB_USER: ${{ vars.PROGKLUB_SFTP_USER }}
           RCLONE_CONFIG_PROGKLUB_KEY_FILE: ~/.ssh/private_key
           RCLONE_CONFIG_PROGKLUB_KNOWN_HOSTS_FILE: ~/.ssh/known_hosts
+          RCLONE_VERBOSE: 2
           PROGKLUB_REMOTE_DIR: ${{ vars.PROGKLUB_SFTP_DESTINATION }}
         run: |
           rclone sync website "progklub:${PROGKLUB_REMOTE_DIR}" --progress
