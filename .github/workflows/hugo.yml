@@ -167,9 +167,10 @@ jobs:
           PROXY_USER: ${{ vars.PROGKLUB_PROXY_USER }}
           PROXY_SOCKS_PORT: "1921"
         run: |
+          echo "RCLONE_CONFIG_SFTP_SOCKS_PROXY=localhost:${PROXY_SOCKS_PORT}" >> "${GITHUB_ENV}"
           echo "Starting SSH SOCKS proxy to ${PROXY_USER}@${PROXY_HOST} on port ${PROXY_SOCKS_PORT}..."
           ssh -N -D "${PROXY_SOCKS_PORT}" -i ~/.ssh/proxy_private_key "${PROXY_USER}@${PROXY_HOST}" &
-          echo "Started SSH SOCKS proxy with PID $!"
+          echo "Started SSH SOCKS proxy with PID $!!"
           sleep 5
 
       - name: Deploy to ProgKlub Server
@@ -180,7 +181,6 @@ jobs:
           RCLONE_CONFIG_PROGKLUB_USER: ${{ vars.PROGKLUB_SFTP_USER }}
           RCLONE_CONFIG_PROGKLUB_KEY_FILE: ~/.ssh/private_key
           RCLONE_CONFIG_PROGKLUB_KNOWN_HOSTS_FILE: ~/.ssh/known_hosts
-          RCLONE_CONFIG_SFTP_SOCKS_PROXY: ${{ secrets.PROGKLUB_PROXY_PRIVATE_KEY != '' && 'localhost:1921' || '' }}
           PROGKLUB_REMOTE_DIR: ${{ vars.PROGKLUB_SFTP_DESTINATION }}
         run: |
           rclone sync website "progklub:${PROGKLUB_REMOTE_DIR}" --progress
