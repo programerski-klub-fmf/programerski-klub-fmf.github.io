@@ -155,13 +155,13 @@ jobs:
           chmod 600 ~/.ssh/sftp_private_key
 
       - name: Prepare SSH key for proxy server
-        if: ${{ secrets.PROGKLUB_PROXY_PRIVATE_KEY != '' }}
+        if: ${{ vars.PROGKLUB_PROXY_HOST != '' }}
         run: |
           echo "${{ secrets.PROGKLUB_PROXY_PRIVATE_KEY }}" > ~/.ssh/proxy_private_key
           chmod 600 ~/.ssh/proxy_private_key
 
       - name: Start SOCKS proxy via SSH
-        if: ${{ secrets.PROGKLUB_PROXY_PRIVATE_KEY != '' }}
+        if: ${{ vars.PROGKLUB_PROXY_HOST != '' }}
         env:
           PROXY_HOST: ${{ vars.PROGKLUB_PROXY_HOST }}
           PROXY_USER: ${{ vars.PROGKLUB_PROXY_USER }}
