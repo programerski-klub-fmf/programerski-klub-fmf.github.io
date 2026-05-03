@@ -146,6 +146,7 @@ jobs:
 
       - name: Prepare SSH configuration
         run: |
+          install -d -m 700 ~/.ssh
           echo "${{ secrets.PROGKLUB_SFTP_PRIVATE_KEY }}" > ~/.ssh/private_key
           echo "${{ secrets.PROGKLUB_SFTP_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/private_key
