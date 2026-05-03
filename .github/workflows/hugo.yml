@@ -123,7 +123,7 @@ jobs:
 
     env:
       RCLONE_VERSION: "1.74.0"
-      PROGKLUB_SOURCE_DIR: ${{ runner.temp }}/website
+      PROGKLUB_SOURCE_DIR: website
       PROGKLUB_REMOTE_DIR: ${{ vars.PROGKLUB_SFTP_DESTINATION }}
 
     needs: build
