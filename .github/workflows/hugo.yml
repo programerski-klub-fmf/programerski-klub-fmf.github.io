@@ -73,7 +73,7 @@ jobs:
       - name: Build the site
         working-directory: hugo
         run: |
-          hugo build --minify --cacheDir "${{ runner.temp }}/hugo-cache"
+          hugo --minify --cacheDir "${{ runner.temp }}/hugo-cache"
 
       - name: Save the Hugo cache
         id: cache-save
