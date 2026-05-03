@@ -147,18 +147,40 @@ jobs:
       - name: Prepare SSH configuration
         run: |
           install -d -m 700 ~/.ssh
-          echo "${{ secrets.PROGKLUB_SFTP_PRIVATE_KEY }}" > ~/.ssh/private_key
-          echo "${{ secrets.PROGKLUB_SFTP_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
-          chmod 600 ~/.ssh/private_key
+          echo "${{ secrets.PROGKLUB_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+
+      - name: Prepare SSH key for SFTP server
+        run: |
+          echo "${{ secrets.PROGKLUB_SFTP_PRIVATE_KEY }}" > ~/.ssh/sftp_private_key
+          chmod 600 ~/.ssh/sftp_private_key
+
+      - name: Prepare SSH key for proxy server
+        if: ${{ secrets.PROGKLUB_PROXY_PRIVATE_KEY != '' }}
+        run: |
+          echo "${{ secrets.PROGKLUB_PROXY_PRIVATE_KEY }}" > ~/.ssh/proxy_private_key
+          chmod 600 ~/.ssh/proxy_private_key
+
+      - name: Start SOCKS proxy via SSH
+        if: ${{ secrets.PROGKLUB_PROXY_PRIVATE_KEY != '' }}
+        env:
+          PROXY_HOST: ${{ vars.PROGKLUB_PROXY_HOST }}
+          PROXY_USER: ${{ vars.PROGKLUB_PROXY_USER }}
+          PROXY_SOCKS_PORT: "1921"
+        run: |
+          echo "Starting SSH SOCKS proxy to ${PROXY_USER}@${PROXY_HOST} on port ${PROXY_SOCKS_PORT}..."
+          ssh -N -D "${PROXY_SOCKS_PORT}" -i ~/.ssh/proxy_private_key "${PROXY_USER}@${PROXY_HOST}" &
+          echo "Started SSH SOCKS proxy with PID $!"
+          sleep 5
 
       - name: Deploy to ProgKlub Server
         env:
+          RCLONE_VERBOSE: 2
           RCLONE_CONFIG_PROGKLUB_TYPE: sftp
           RCLONE_CONFIG_PROGKLUB_HOST: ${{ vars.PROGKLUB_SFTP_HOST }}
           RCLONE_CONFIG_PROGKLUB_USER: ${{ vars.PROGKLUB_SFTP_USER }}
           RCLONE_CONFIG_PROGKLUB_KEY_FILE: ~/.ssh/private_key
           RCLONE_CONFIG_PROGKLUB_KNOWN_HOSTS_FILE: ~/.ssh/known_hosts
-          RCLONE_VERBOSE: 2
+          RCLONE_CONFIG_SFTP_SOCKS_PROXY: ${{ secrets.PROGKLUB_PROXY_PRIVATE_KEY != '' && 'localhost:1921' || '' }}
           PROGKLUB_REMOTE_DIR: ${{ vars.PROGKLUB_SFTP_DESTINATION }}
         run: |
           rclone sync website "progklub:${PROGKLUB_REMOTE_DIR}" --progress
