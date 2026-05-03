@@ -132,7 +132,7 @@ jobs:
       - name: Install rclone
         run: |
           curl -fLO "https://downloads.rclone.org/v${RCLONE_VERSION}/rclone-v${RCLONE_VERSION}-linux-amd64.deb"
-          apt-get install -y "./rclone-v${RCLONE_VERSION}-linux-amd64.deb"
+          sudo apt-get install -y "./rclone-v${RCLONE_VERSION}-linux-amd64.deb"
           rm "rclone-v${RCLONE_VERSION}-linux-amd64.deb"
 
       - name: Verify installations
