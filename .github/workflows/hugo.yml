@@ -147,7 +147,7 @@ jobs:
       - name: Prepare SSH configuration
         run: |
           install -d -m 700 ~/.ssh
-          echo "${{ secrets.PROGKLUB_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          echo "${{ vars.PROGKLUB_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
 
       - name: Prepare SSH key for SFTP server
         run: |
@@ -179,7 +179,7 @@ jobs:
           RCLONE_CONFIG_PROGKLUB_TYPE: sftp
           RCLONE_CONFIG_PROGKLUB_HOST: ${{ vars.PROGKLUB_SFTP_HOST }}
           RCLONE_CONFIG_PROGKLUB_USER: ${{ vars.PROGKLUB_SFTP_USER }}
-          RCLONE_CONFIG_PROGKLUB_KEY_FILE: ~/.ssh/private_key
+          RCLONE_CONFIG_PROGKLUB_KEY_FILE: ~/.ssh/sftp_private_key
           RCLONE_CONFIG_PROGKLUB_KNOWN_HOSTS_FILE: ~/.ssh/known_hosts
           PROGKLUB_REMOTE_DIR: ${{ vars.PROGKLUB_SFTP_DESTINATION }}
         run: |
