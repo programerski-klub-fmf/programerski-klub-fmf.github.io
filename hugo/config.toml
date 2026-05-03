@@ -1,4 +1,4 @@
-baseURL = 'http://programerski-klub-fmf.github.io/'
+baseURL = 'https://progklub.si/'
 languageCode = 'en-us'
 defaultContentLanguage = 'sl'
 title = 'Programerski klub FMF'

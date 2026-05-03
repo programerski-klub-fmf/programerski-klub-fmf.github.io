@@ -39,7 +39,7 @@ jobs:
 
       - name: Install Hugo
         env:
-          HUGO_VERSION: "0.128.0"
+          HUGO_VERSION: "0.161.1"
         run: |
           curl -sLJO "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
           mkdir -p "${HOME}/.local/hugo"
@@ -73,7 +73,7 @@ jobs:
       - name: Build the site
         working-directory: hugo
         run: |
-          hugo --minify --cacheDir "${{ runner.temp }}/hugo-cache"
+          hugo build --gc --minify --cacheDir "${{ runner.temp }}/hugo-cache"
 
       - name: Save the Hugo cache
         id: cache-save
@@ -123,10 +123,6 @@ jobs:
     permissions:
       contents: read
 
-    env:
-      PROGKLUB_SOURCE_DIR: website
-      PROGKLUB_REMOTE_DIR: ${{ vars.PROGKLUB_SFTP_DESTINATION }}
-
     needs: build
 
     steps:
@@ -146,14 +142,21 @@ jobs:
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           name: github-pages
-          path: ${{ env.PROGKLUB_SOURCE_DIR }}
+          path: website
+
+      - name: Prepare SSH configuration
+        run: |
+          echo "${{ secrets.PROGKLUB_SFTP_PRIVATE_KEY }}" > ~/.ssh/private_key
+          echo "${{ secrets.PROGKLUB_SFTP_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/private_key
 
       - name: Deploy to ProgKlub Server
         env:
           RCLONE_CONFIG_PROGKLUB_TYPE: sftp
           RCLONE_CONFIG_PROGKLUB_HOST: ${{ vars.PROGKLUB_SFTP_HOST }}
-          RCLONE_CONFIG_PROGKLUB_PORT: ${{ vars.PROGKLUB_SFTP_PORT }}
           RCLONE_CONFIG_PROGKLUB_USER: ${{ vars.PROGKLUB_SFTP_USER }}
-          RCLONE_CONFIG_PROGKLUB_KEY_PEM: ${{ secrets.PROGKLUB_SFTP_PRIVATE_KEY }}
+          RCLONE_CONFIG_PROGKLUB_KEY_FILE: ~/.ssh/private_key
+          RCLONE_CONFIG_PROGKLUB_KNOWN_HOSTS_FILE: ~/.ssh/known_hosts
+          PROGKLUB_REMOTE_DIR: ${{ vars.PROGKLUB_SFTP_DESTINATION }}
         run: |
-          rclone sync "${PROGKLUB_SOURCE_DIR}" "progklub:${PROGKLUB_REMOTE_DIR}" --progress
+          rclone sync website "progklub:${PROGKLUB_REMOTE_DIR}" --progress

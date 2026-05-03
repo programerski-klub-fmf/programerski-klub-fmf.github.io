@@ -8,7 +8,7 @@
 <meta name="twitter:card" content="summary">
 {{ $sass := resources.Get "style/sass/mystyles.scss" }}
 {{ $style := $sass | css.Sass | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 <link href="/css/pi-game.css" rel="stylesheet">
 <script type="text/javascript" charset="utf-8" src="/js/navbar-burger.js"></script>
 <script type="text/javascript" charset="utf-8" src="/js/cookies.js"></script>
@@ -32,4 +32,3 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-
