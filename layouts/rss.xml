@@ -1,0 +1,90 @@
+{{- $authorEmail := "" }}
+{{- with site.Params.Author }}
+  {{- if reflect.IsMap . }}
+    {{- with .email }}
+      {{- $authorEmail = . }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+{{- $authorName := "" }}
+{{- with site.Params.Author }}
+  {{- if reflect.IsMap . }}
+    {{- with .name }}
+      {{- $authorName = . }}
+    {{- end }}
+  {{- else }}
+    {{- $authorName  = . }}
+  {{- end }}
+{{- end }}
+
+{{- $pctx := . }}
+{{- if .IsHome }}
+  {{- $pctx = site }}
+{{- end }}
+
+{{- $pages := slice }}
+{{- if or $.IsHome $.IsSection }}
+  {{- $pages = $pctx.RegularPages }}
+{{- else }}
+  {{- $pages = $pctx.Pages }}
+{{- end }}
+{{- $pages = where $pages "Params.Feed.Disable" "ne" true }}
+{{- $pages = where $pages "CurrentSection.Params.Feed.Disable" "ne" true }}
+{{- $pages = $pages.ByLastmod.Reverse }}
+{{- $limit := site.Config.Services.RSS.Limit }}
+{{- if ge $limit 1 }}
+  {{- $pages = $pages | first $limit }}
+{{- end }}
+
+
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" ?>" | safeHTML }}
+
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:webfeeds="http://webfeeds.org/rss/1.0">
+  <title>{{ partial "page-title" . }}</title>
+  <subtitle>{{ partial "page-description" . }}</subtitle>
+  <id>{{ .Permalink }}</id>
+
+  <updated>{{ (index $pages.ByLastmod.Reverse 0).Lastmod.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}</updated>
+
+  {{ with .OutputFormats.Get "HTML" }}<link href="{{ .Permalink }}" rel="alternate" type="text/html" hreflang="{{ site.Language.Locale }}" />{{ end }}
+  {{ with .OutputFormats.Get "RSS" }}<link href="{{ .Permalink }}" rel="self" type="application/atom+xml" hreflang="{{ site.Language.Locale }}" />{{ end }}
+
+  <icon>{{ "favicons/favicon-256x256.png" | absURL }}</icon>
+  <webfeeds:icon>{{ "favicons/favicon-256x256.png" | absURL }}</webfeeds:icon>
+
+  {{ if $authorName }}
+    <author>
+      <name>{{ $authorName }}</name>
+      {{ if $authorEmail }}<email>{{ $authorEmail }}</email>{{ end }}
+    </author>
+  {{ end }}
+
+  {{ with site.Copyright }}
+    <rights>{{ . }}</rights>
+  {{ end }}
+
+  <generator>Hugo</generator>
+
+  {{ range $pages }}
+    <entry>
+      <title>{{ .Title }}</title>
+      <id>{{ .Permalink }}</id>
+      <link href="{{ .Permalink }}" />
+      {{ if not .PublishDate.IsZero }}<published>{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}</published>{{ end }}
+      <updated>{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}</updated>
+      <category term="{{ .CurrentSection.Title  }}" />
+      {{ with .Params.Author }}<author><name>{{ . }}</name></author>{{ end }}
+      <summary type="html">
+        {{- .Summary | transform.XMLEscape | safeHTML -}}
+      </summary>
+      <content type="html">
+        {{- $page := . -}}
+        {{- with .Resources.GetMatch .Params.CoverUrl -}}
+          {{- printf "<figure><img src=\"%s\" alt=\"%s\" /></figure>\n" (.Permalink) ($page.Params.CoverAlt) | transform.XMLEscape | safeHTML -}}
+        {{- end -}}
+        {{- .Content | transform.XMLEscape | safeHTML -}}
+      </content>
+    </entry>
+  {{ end }}
+</feed>

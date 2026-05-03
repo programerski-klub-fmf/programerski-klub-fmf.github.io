@@ -1,0 +1,25 @@
+{{ define "main" }}
+  <section class="section">
+    <article class="card">
+      {{ with .Resources.Get .Params.CoverUrl }}
+        <div class="card-image">
+          <figure class="image is-fullwidth">
+            <img src="{{ .RelPermalink }}"
+                 alt="{{ $.Params.CoverAlt }}"
+                 width="{{ .Width }}"
+                 height="{{ .Height }}"
+            />
+          </figure>
+        </div>
+      {{ end }}
+
+      <div class="card-content">
+        <h1 class="title">{{ .Title }}</h1>
+        {{ partial "page-meta" . }}
+        <div class="content">{{ .Content }}</div>
+        <hr />
+        {{ partial "page-navigation" . }}
+      </div>
+    </article>
+  </section>
+{{ end }}

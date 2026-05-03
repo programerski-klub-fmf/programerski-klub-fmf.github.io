@@ -1,0 +1,26 @@
+.geeks {
+  color: #0f0;
+  background-color: #000;
+  box-shadow:
+    0 0 20px rgb(127, 153, 127),
+    0 0 40px rgb(127, 153, 127),
+    0 0 60px rgb(127, 153, 127),
+    0 0 80px rgb(127, 153, 127),
+    0 0 120px rgb(127, 153, 127),
+    0 0 220px rgb(127, 153, 127),
+    0 0 320px rgb(127, 153, 127);
+  transition: color 2s, background-color 2s, box-shadow 2s;
+}
+
+.geeks:hover {
+  color: #000;
+  background-color: #0f0;
+  box-shadow:
+    0 0 40px 60px rgb(83, 224, 83),
+    0 0 80px 120px rgb(83, 224, 83),
+    0 0 120px 180px rgb(83, 224, 83),
+    0 0 160px 240px rgb(82, 226, 82),
+    0 0 240px 360px rgb(37, 214, 37),
+    0 0 360px 600px rgb(27, 165, 27),
+    0 0 480px 700px rgb(63, 235, 63);
+}

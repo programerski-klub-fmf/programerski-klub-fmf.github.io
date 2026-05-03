@@ -1,0 +1,79 @@
+#game-canvas {
+  overflow: hidden;
+  position: relative;
+  background-color: #000;
+  border: 1px solid #fff;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+}
+
+#game-numbers {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#game-mouse {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 80px;
+  background-image: url("/entertainment/pi-game/pi.svg");
+  background-size: cover;
+  transform: rotate(180deg);
+  filter: brightness(300%);
+  touch-action: none;
+  pointer-events: none;
+}
+
+#game-background {
+  height: 60%;
+  opacity: 20%;
+  touch-action: none;
+  pointer-events: none;
+}
+
+#game-start-button {
+  position: absolute;
+  z-index: 1;
+  touch-action: none;
+}
+
+#game-start-button:hover {
+  filter: brightness(50%);
+}
+
+#game-score {
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  z-index: 2;
+}
+
+.game-number {
+  position: absolute;
+  font-size: 50px;
+  color: #0f0;
+  touch-action: none;
+  pointer-events: none;
+}
+
+.game-text {
+  font-size: 50px;
+  padding: 0 !important;
+  margin: 0 !important;
+  word-break: break-all;
+}
+
+.game-highlighted {
+  color: #0f0;
+}
+
+.disable-mouse {
+  pointer-events: none;
+}

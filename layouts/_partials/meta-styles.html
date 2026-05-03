@@ -1,0 +1,32 @@
+{{ $styles := slice }}
+
+{{/* Collect main stylesheets */}}
+
+{{ $main := resources.Get "styles/main.scss" | css.Sass (dict "transpiler" "dartsass") }}
+{{ $styles = $styles | append $main }}
+
+{{/* Collect stylesheets from base page */}}
+
+{{ range .Params.Stylesheets }}
+  {{ with $.Resources.Get . }}
+    {{ $styles = $styles | append . }}
+  {{ end }}
+{{ end }}
+
+{{/* Collect stylesheets from included pages */}}
+
+{{ range .Pages }}
+  {{ $page := . }}
+  {{ range .Params.Stylesheets }}
+    {{ with $page.Resources.Get . }}
+      {{ $styles = $styles | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* Insert styles */}}
+
+{{ range $styles }}
+  {{ $style := . | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
+{{ end }}

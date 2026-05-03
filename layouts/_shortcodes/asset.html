@@ -1,0 +1,8 @@
+{{- $url := urls.Parse (.Get 0) -}}
+{{- $src := $url.String -}}
+{{- if not $url.IsAbs -}}
+  {{- with or (.Page.Resources.Get $url.Path) (resources.Get $url.Path) -}}
+    {{- $src = .RelPermalink -}}
+  {{- end -}}
+{{- end -}}
+{{- $src -}}

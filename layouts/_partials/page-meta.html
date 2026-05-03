@@ -1,0 +1,25 @@
+<aside class="tags">
+  {{ if and (eq .Section "workshops") .Params.Presenter }}
+    <address class="tag is-medium is-dark" rel="author">{{ .Params.Presenter }}</address>
+  {{ end }}
+
+  {{ if and (eq .Section "news") .Params.Author }}
+    <address class="tag is-medium is-dark" rel="">{{ .Params.Author }}</address>
+  {{ end }}
+
+  {{ $datetime := .Date | time.Format "2006-01-02T15:04:05Z07:00" }}
+  {{ $human_date := .Date | time.Format ":date_long" }}
+  {{ $human_time := .Date | time.Format ":time_short" }}
+  <time class="tag is-medium is-dark {{- if eq .Section "workshops" }} has-text-weight-bold {{- end }}" datetime="{{ $datetime }}">{{ $human_date }}, {{ $human_time }}</time>
+
+  {{ if eq .Section "workshops" }}
+    <span class="tag is-medium is-dark">{{ .Params.Location }}</span>
+  {{ end }}
+
+  {{ if eq .Section "news" }}
+    {{ $plural_words := dict "count" .WordCount "one" "beseda" "two" "besedi" "few" "besede" "other" "besed" }}
+    {{ $plural_minutes := dict "count" .ReadingTime "one" "minuta" "two" "minuti" "few" "minute" "other" "minut" }}
+    <span class="tag is-medium is-dark">{{ .WordCount }} {{ partial "pluralize" $plural_words }}</span>
+    <span class="tag is-medium is-dark">{{ .ReadingTime }} {{ partial "pluralize" $plural_minutes }}</span>
+  {{ end }}
+</aside>

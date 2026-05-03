@@ -1,8 +1,0 @@
----
-title: "Srečanja"
-date: 2023-03-28T17:27:45+02:00
-priority: 50
-draft: false
----
-
-Člani Programerskega kluba se srečujemo vsak **{{< day >}}** ob **{{< time >}}** v učilnici **{{< place >}}** na Jadranski 21.

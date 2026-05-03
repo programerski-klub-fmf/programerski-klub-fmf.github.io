@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+@use "sass:color";
+
+$green: #00ff00;
+$pink: #ff69b4;
+$purple: #7c3aed;
+$orange: #f59e0b;
+$red: #ef4444;
+$light: #f0f0f0;
+$dark: #070707;
+
+@use "bulma/utilities/initial-variables" as iv;
+@use "bulma/utilities/css-variables" as cv;
+
+@forward "bulma/utilities" with (
+  $primary: $green,
+  $link: $green,
+  $text: $light,
+  $info: $purple,
+  $success: $green,
+  $warning: $orange,
+  $danger: $red,
+);
+
+@forward "bulma/base" with (
+  $body-background-color: $dark,
+  $body-color: $light,
+  $strong-color: $light,
+);
+
+@forward "bulma/elements/title" with (
+  $title-weight: iv.$weight-bold,
+);
+
+@forward "bulma/elements/block";
+@forward "bulma/elements/content";
+@forward "bulma/elements/button";
+@forward "bulma/elements/icon";
+@forward "bulma/elements/image";
+@forward "bulma/elements/table";
+@forward "bulma/elements/tag";
+
+@forward "bulma/grid/columns";
+@forward "bulma/grid/grid";
+
+@forward "bulma/layout/footer" with (
+  $footer-background-color: $dark,
+  $footer-color: $light,
+);
+
+@forward "bulma/layout/section" with (
+  $section-padding: 1.5rem,
+  $section-padding-desktop: 1.5rem,
+);
+
+@forward "bulma/layout/container";
+@forward "bulma/layout/level";
+
+@forward "bulma/helpers";
+
+@forward "bulma/components/card" with (
+  $card-background-color: $dark,
+  $card-color: $light,
+  $card-shadow: 0 0 10px 0 $green,
+  $card-header-padding: 1.5rem 1rem 0,
+  $card-content-padding: 1.5rem,
+);
+
+@forward "bulma/components/navbar" with (
+  $navbar-background-color: $dark,
+  $navbar-item-color: $light,
+  $navbar-burger-color: $light,
+  $navbar-box-shadow-size: 0 0 10px 0,
+  $navbar-box-shadow-color: $green,
+);
+
+@forward "bulma/components/pagination";
+
+@use "bulma/themes/light";
+@use "bulma/themes/dark";
+@use "bulma/themes/setup";
+
+#{iv.$variables-host} {
+  @include light.light-theme;
+  @include dark.dark-theme;
+  @include setup.setup-theme;
+}
+
+a.navbar-item {
+  &.is-active, &.is-selected {
+    background-color: $dark;
+    color: $green;
+  }
+
+  &:focus, &:focus-within, &:hover {
+    background-color: $dark;
+    color: color.scale($green, $lightness: -10%, $space: oklch);
+  }
+}
+
+.button.is-outlined {
+  &, &:hover {
+    @include cv.register-var("button-border-width", max(1px, 0.0625em));
+  }
+
+  &:hover {
+    border-color: hsl(
+      #{cv.getVar("button-h")},
+      #{cv.getVar("button-s")},
+      #{calc(cv.getVar("button-l") - 20%)}
+    );
+
+    color: hsl(
+      #{cv.getVar("button-h")},
+      #{cv.getVar("button-s")},
+      #{calc(cv.getVar("button-l") - 20%)}
+    );
+  }
+}
+
+.footer {
+  box-shadow: 0 0 10px 0 $green;
+}

@@ -1,0 +1,62 @@
+{{ if gt .TotalPages 1 }}
+  {{ $curr := .PageNumber }}
+  {{ $total := .TotalPages }}
+  {{ $window := 4 }}
+  {{ $half := div $window 2 }}
+
+  {{ $scr := newScratch }}
+  {{ $start := sub $curr $half }}
+  {{ if lt $start 1 }}{{ $start = 1 }}{{ end }}
+  {{ $end := add $start (sub $window 1) }}
+  {{ if gt $end $total }}{{ $end = $total }}{{ end }}
+  {{ $start = sub $end (sub $window 1) }}
+  {{ if lt $start 1 }}{{ $start = 1 }}{{ end }}
+  {{ $scr.Set "start" $start }}
+  {{ $scr.Set "end" $end }}
+
+  <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+    <ul class="pagination-list">
+      {{ if ne $curr 1 }}
+        <li>
+          <a class="pagination-link" aria-label="Pojdi na prvo stran" href="{{ .First.URL }}">
+            <span class="icon"><i class="fas fa-angles-left"></i></span>
+          </a>
+        </li>
+      {{ end }}
+
+      {{ if .HasPrev }}
+        <li>
+          <a class="pagination-link" aria-label="Pojdi na prejšnjo stran" rel="prev" href="{{ .Prev.URL }}">
+            <span class="icon"><i class="fas fa-chevron-left"></i></span>
+          </a>
+        </li>
+      {{ end }}
+
+      {{ range $page := .Pagers }}
+        {{ if and (ge $page.PageNumber ($scr.Get "start")) (le $page.PageNumber ($scr.Get "end")) }}
+          <li>
+            <a class="pagination-link {{- if eq $page.PageNumber $curr }} is-current {{- end }}" aria-label="Pojdi na stran {{ $page.PageNumber }}" href="{{ $page.URL }}">
+              <span>{{ $page.PageNumber }}</span>
+            </a>
+          </li>
+        {{ end }}
+      {{ end }}
+
+      {{ if .HasNext }}
+        <li>
+          <a class="pagination-link" aria-label="Pojdi na naslednjo stran" rel="next" href="{{ .Next.URL }}">
+            <span class="icon"><i class="fas fa-chevron-right"></i></span>
+          </a>
+        </li>
+      {{ end }}
+
+      {{ if ne $curr $total }}
+        <li>
+          <a class="pagination-link" aria-label="Pojdi na zadnjo stran" href="{{ .Last.URL }}">
+            <span class="icon"><i class="fas fa-angles-right"></i></span>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </nav>
+{{ end }}

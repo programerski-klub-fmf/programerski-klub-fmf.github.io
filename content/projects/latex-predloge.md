@@ -1,13 +1,12 @@
 ---
-title: "LaTeX Predloge"
-date: 2022-11-02T21:44:28+01:00
-draft: false
-repository_link: "https://github.com/ul-fmf/fmfdelo"
+title: LaTeX predloge
+description: Vzdrževanje LaTeX predlog za diplomska in magistrska dela na Fakulteti za matematiko in fiziko
+published: 2022-11-02 21:44:28 +01:00
+repository: https://github.com/ul-fmf/fmfdelo
 contacts:
-    - name: "Luna Strah"
-      at:
+  - name: Luna Strah
 ---
 
-Na Fakulteti za matematiko in fiziko pri pripravi diplomskih in magisterskih del ter izpitov uporbljamo vnaprej pripravlljene *LaTeX* predloge, da si s tem zagotovimo uskladitev standardov. Predloge zahtevajo posodobitev in opdravitev nekaterih *bug*-ov. Na temu trenutno dela ta delovna skupina programerskega kluba.
+Na Fakulteti za matematiko in fiziko pri pripravi diplomskih in magistrskih del ter izpitov uporabljamo vnaprej pripravljene *LaTeX* predloge, da si s tem zagotovimo uskladitev standardov. Predloge zahtevajo posodobitev in odpravljanje nekaterih napak. Na temu trenutno dela ta delovna skupina Programerskega kluba.
 
 Repozitorija, ki vključujeta predloge sta [izpit](https://github.com/ul-fmf/izpit) in [fmfdelo](https://github.com/ul-fmf/fmfdelo).

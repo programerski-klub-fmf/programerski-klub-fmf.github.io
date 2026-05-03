@@ -1,11 +1,7 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
-summary: ""
-date: {{ .Date }}
-draft: false
-cover_image: "hugo/static/images/index_cats.png"
+title: {{ replace .File.ContentBaseName "-" " " | title }}
+date: {{ .Date | time.Format "2006-01-02 15:04:05 Z07:00" }}
+author:
+coverUrl:
+coverAlt:
 ---
-
-## Heading 2
-
-Content

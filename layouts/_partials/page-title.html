@@ -1,0 +1,4 @@
+{{- $page := (or (.Scratch.Get "PageTitle") .Params.Title) | plainify | htmlUnescape -}}
+{{- $site := site.Title | plainify | htmlUnescape -}}
+{{- with $page -}}{{- . -}}{{- site.Params.Separator -}}{{- end -}}
+{{- $site -}}

@@ -1,0 +1,52 @@
+{{ define "main" }}
+  <section class="section">
+    <h1 class="title is-2 has-text-centered pb-4">Programerski klub FMF</h1>
+    {{ with resources.Get "/images/cats.png" }}
+      <figure class="image max-width-700">
+        <img src="{{ .RelPermalink }}"
+             alt="Maskota Programerskega kluba FMF"
+             width="{{ .Width }}"
+             height="{{ .Height }}"
+        />
+      </figure>
+    {{ end }}
+  </section>
+
+  <section id="news" class="section">
+    <h2 class="title is-4 has-text-centered">Zadnje novice</h2>
+
+    {{ with site.GetPage "section" "news" }}
+      {{ range $ix, $page := first 2 .Pages }}
+        {{ partial "homepage-post" (dict "page" $page "lazy" (gt $ix 0)) }}
+      {{ end }}
+    {{ end }}
+
+    <div class="has-text-centered">
+      <a href="/news/" class="button is-link is-outlined">Vse novice</a>
+    </div>
+  </section>
+
+  <section id="workshops" class="section">
+    <h2 class="title is-4 has-text-centered">Aktualna delavnica</h2>
+
+    {{ with site.GetPage "section" "workshops" }}
+      {{ range $ix, $page := first 1 .Pages }}
+        {{ partial "homepage-post" (dict "page" $page "lazy" (gt $ix 0)) }}
+      {{ end }}
+    {{ end }}
+
+    <div class="has-text-centered">
+      <a href="/workshops/" class="button is-link is-outlined">Vse delavnice</a>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2 class="title is-4 has-text-centered">Osnovne informacije</h2>
+
+    {{ with site.GetPage "section" "about" }}
+      {{ range .RegularPages.ByWeight }}
+        {{ partial "homepage-about" . }}
+      {{ end }}
+    {{ end }}
+  </section>
+{{ end }}

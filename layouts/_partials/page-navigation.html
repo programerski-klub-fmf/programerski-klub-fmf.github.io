@@ -1,0 +1,16 @@
+<nav class="level">
+  <div class="level-left">
+    <p class="level-item">
+      {{ with .PrevInSection }}
+        <a rel="prev" href="{{ .RelPermalink }}">←&nbsp{{ .Title }}</a>
+      {{ end }}
+    </p>
+  </div>
+  <div class="level-right">
+    <p class="level-item">
+      {{ with .NextInSection }}
+        <a rel="next" href="{{ .RelPermalink }}">{{ .Title }}&nbsp→</a>
+      {{ end }}
+    </p>
+  </div>
+</nav>

@@ -1,11 +1,16 @@
 ---
-title: "Jelka"
-date: 2026-03-07T12:56:14+01:00
-draft: false
-repository_link: "https://github.com/programerski-klub-fmf/jelka"
+title: Programabilna jelka
+description: Programabilna novoletna jelka na Fakulteti za matematiko in fiziko
+published: 2026-03-07 12:56:14 +01:00
+website: https://jelka.fmf.uni-lj.si/
+repository: https://github.com/Jelka-FMF
 contacts:
-    - name: "Katja Berčič"
-      at: "katja.bercic@fmf.uni-lj.si"
+  - name: Katja Berčič
+    at: katja.bercic@fmf.uni-lj.si
 ---
 
-Kot je Matt Parker storil v svojem [videu](https://youtu.be/TvlpIojusBE), smo pod sponzorstvom podjetij Abelium in Acex že tri leta zapored postavili jelko z lučkami, ki jih lahko programiramo. Jelka bo stala pri vhodu v stavbo na Jadranski 21 in bo prižgana od jutra do zaprtja stavbe. Kdor želi, lahko svojo animacijo prispeva na javni repozitorij.
+Po vzoru [Matta Parkerja](https://youtu.be/TvlpIojusBE) smo pod sponzorstvom podjetij Abelium in Acex že tri leta zapored postavili [jelko z lučkami](https://jelka.fmf.uni-lj.si/), ki jih lahko programiramo. Za vsako lučko na jelko smo natančno določili njen položaj v prostoru, kar nam omogoča, da z uporabo koordinat lučk na njej rišemo različne oblike in animacije.
+
+Jelka je postavljena decembra in januarja pri vhodu v stavbo matematike na Jadranski 21 in je prižgana od jutra do zaprtja stavbe.
+
+Vabljeni k postavljanju jelke in dodajanju novih funkcionalnosti. Kdor želi, lahko tudi prispeva svoje animacije na javni repozitorij.

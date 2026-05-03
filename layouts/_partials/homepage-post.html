@@ -1,0 +1,24 @@
+{{ $page := .page }}
+{{ $lazy := .lazy | default nil }}
+
+<article class="card">
+  {{ with $page.Resources.Get $page.Params.CoverUrl }}
+    <div class="card-image-small">
+      <figure class="image">
+        <img src="{{ .RelPermalink }}"
+             alt="{{ $page.Params.CoverAlt }}"
+             width="{{ .Width }}"
+             height="{{ .Height }}"
+             {{- if $lazy }} loading="lazy" {{- end }}
+        />
+      </figure>
+    </div>
+  {{ end }}
+
+  <div class="card-content">
+    <h3 class="title is-5"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+    {{ partial "page-meta" $page }}
+    <div class="content">{{ $page.Summary | plainify }}</div>
+    <a href="{{ $page.RelPermalink }}">Preberi več ...</a>
+  </div>
+</article>

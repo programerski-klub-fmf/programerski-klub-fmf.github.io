@@ -1,31 +1,26 @@
 {{ define "main" }}
-{{ .Content }}
+  <section class="section">
+    <h1 class="title is-2 has-text-centered">{{ .Title }}</h1>
+    {{ with .Content }}<div class="content">{{ . }}</div>{{ end }}
+  </section>
 
-<div class="columns">
-    <div class="column">
-        {{ $count := 0 }}
-        {{ range .Paginator.Pages }}
-        {{ if eq (mod $count 2) 0 }}
-        <div class="block">
-            {{ partial "project_card.html" . }}
-        </div>
-        {{ end }}
-        {{ $count = add $count 1 }}
-        {{ end }}
+  <section class="section">
+    <div class="masonry">
+      {{ range .RegularPages.ByWeight }}
+        <article class="card masonry-item">
+          <header class="card-header">
+            <h2 class="card-header-title icon-text">
+              <a href="{{ .RelPermalink }}">
+                <span class="icon"><i class="fas fa-code-branch"></i></span>
+                <span>{{ .Title }}</span>
+              </a>
+            </h2>
+          </header>
+          <div class="card-content">
+            <div class="content">{{ .Content }}</div>
+          </div>
+        </article>
+      {{ end }}
     </div>
-
-    <div class="column">
-        {{ $count := 0 }}
-        {{ range .Paginator.Pages }}
-        {{ if eq (mod $count 2) 1 }}
-        <div class="block">
-            {{ partial "project_card.html" . }}
-        </div>
-        {{ end }}
-        {{ $count = add $count 1 }}
-        {{ end }}
-    </div>
-</div>
-
+  </section>
 {{ end }}
-

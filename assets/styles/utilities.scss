@@ -1,0 +1,59 @@
+@use "bulma/utilities/initial-variables" as iv;
+@use "bulma/utilities/css-variables" as cv;
+
+@for $px from 1 through 20 {
+  .max-width-#{$px * 100} {
+    max-width: #{$px * 100}px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .max-height-#{$px * 100} {
+    max-height: #{$px * 100}px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+.min-width-viewport {
+  min-width: 100vw;
+}
+
+.min-height-viewport {
+  min-height: 100vh;
+}
+
+.card-image-small {
+  padding: cv.getVar("card-content-padding") cv.getVar("card-content-padding") 0;
+
+  figure {
+    width: min(100%, 480px);
+  }
+
+  @media screen and (min-width: 608px) {
+    figure {
+      width: max(50%, 480px);
+    }
+  }
+
+  img {
+    border-radius: cv.getVar("card-radius");
+  }
+}
+
+.masonry {
+  column-count: 1;
+  column-gap: 1.5rem;
+}
+
+@media screen and (min-width: iv.$tablet) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+.masonry-item {
+  display: block;
+  margin-bottom: 1.5rem;
+  break-inside: avoid;
+}
