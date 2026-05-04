@@ -162,7 +162,7 @@ jobs:
             if [ -n "${{ vars.PROGKLUB_PROXY_HOST }}" ]; then
               echo ""
               echo "Host ${{ vars.PROGKLUB_PROXY_HOST }}"
-              echo "User ${{ vars.PROGKLUB_PROXY_HOST_USER }}"
+              echo "User ${{ vars.PROGKLUB_PROXY_USER }}"
               echo "IdentityFile ~/.ssh/proxy_private_key"
             fi
           } > ~/.ssh/config
@@ -182,10 +182,9 @@ jobs:
       - name: Deploy to ProgKlub Server
         env:
           RCLONE_VERBOSE: 2
-          RCLONE_SFTP_SSH: ssh
-          RCLONE_CONFIG_PROGKLUB_TYPE: sftp
-          RCLONE_CONFIG_PROGKLUB_HOST: ${{ vars.PROGKLUB_SFTP_HOST }}
-          RCLONE_CONFIG_PROGKLUB_USER: ${{ vars.PROGKLUB_SFTP_USER }}
-          PROGKLUB_REMOTE_DIR: ${{ vars.PROGKLUB_SFTP_DESTINATION }}
+          RCLONE_CONFIG_REMOTE_TYPE: sftp
+          RCLONE_CONFIG_REMOTE_SHELL_TYPE: none
+          RCLONE_CONFIG_REMOTE_SSH: ssh ${{ vars.PROGKLUB_SFTP_HOST }}
+          RCLONE_CONFIG_REMOTE_KNOWN_HOSTS_FILE: ~/.ssh/known_hosts
         run: |
-          rclone sync website "progklub:${PROGKLUB_REMOTE_DIR}" --progress
+          rclone sync website "remote:${{ vars.PROGKLUB_SFTP_DESTINATION }}" --progress
