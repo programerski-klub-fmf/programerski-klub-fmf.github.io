@@ -142,7 +142,12 @@ jobs:
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           name: github-pages
-          path: website
+          path: artifact
+
+      - name: Extract the artifact
+        run: |
+          mkdir -p website
+          tar xf artifact/artifact.tar --no-same-owner --no-same-permissions -C website
 
       - name: Prepare SSH configuration
         run: |
@@ -181,7 +186,6 @@ jobs:
 
       - name: Deploy to ProgKlub Server
         env:
-          RCLONE_VERBOSE: 2
           RCLONE_CONFIG_REMOTE_TYPE: sftp
           RCLONE_CONFIG_REMOTE_SHELL_TYPE: none
           RCLONE_CONFIG_REMOTE_SSH: ssh ${{ vars.PROGKLUB_SFTP_HOST }}
