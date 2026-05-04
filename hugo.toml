@@ -22,3 +22,7 @@ expiryDate = ["expirydate", "unpublishdate"]
 [markup.highlight]
 wrapperClass = "block highlight"
 style = "monokai"
+
+[outputFormats.RSS]
+mediatype = "application/rss"
+baseName = "feed"
