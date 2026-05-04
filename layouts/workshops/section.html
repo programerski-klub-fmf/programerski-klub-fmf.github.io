@@ -1,0 +1,35 @@
+{{ define "main" }}
+  <section class="section">
+    <h1 class="title is-2 has-text-centered">{{ .Title }}</h1>
+    {{ with .Content }}<div class="content">{{ . }}</div>{{ end }}
+  </section>
+
+  <section class="section">
+    {{ $paginator := .Paginator }}
+
+    {{ range $ix, $page := $paginator.Pages }}
+      <article class="card">
+        {{ with $page.Resources.Get $page.Params.CoverUrl }}
+          <div class="card-image">
+            <figure class="image is-fullwidth">
+              <img src="{{ .RelPermalink }}"
+                   alt="{{ $page.Params.CoverAlt }}"
+                   width="{{ .Width }}"
+                   height="{{ .Height }}"
+                   {{- if gt $ix 0 }} loading="lazy" {{- end }} />
+            </figure>
+          </div>
+        {{ end }}
+
+        <div class="card-content">
+          <h2 class="title is-4"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h2>
+          {{ partial "page-meta" $page }}
+          <div class="content">{{ $page.Summary | plainify }}</div>
+          <a href="{{ $page.RelPermalink }}">Preberi več ...</a>
+        </div>
+      </article>
+    {{ end }}
+
+    {{ partial "section-pagination" $paginator }}
+  </section>
+{{ end }}

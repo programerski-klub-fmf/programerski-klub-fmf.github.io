@@ -1,0 +1,58 @@
+{
+  "name": "Programerski klub FMF",
+  "short_name": "ProgKlub",
+  "description": "Programerski klub na Fakulteti za matematiko in fiziko Univerze v Ljubljani",
+  "lang": "sl",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/favicons/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/favicons/favicon-48x48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "/favicons/favicon-64x64.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "/favicons/favicon-128x128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/favicons/favicon-256x256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/favicons/favicon-310x310.png",
+      "type": "image/png",
+      "sizes": "310x310"
+    },
+    {
+      "src": "/favicons/favicon-128x128-maskable.png",
+      "type": "image/png",
+      "sizes": "128x128",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicons/favicon-256x256-maskable.png",
+      "type": "image/png",
+      "sizes": "256x256",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicons/favicon-310x310-maskable.png",
+      "type": "image/png",
+      "sizes": "310x310",
+      "purpose": "maskable"
+    }
+  ]
+}

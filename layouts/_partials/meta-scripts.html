@@ -1,0 +1,38 @@
+{{ $scripts := slice }}
+
+{{/* Collect main scripts */}}
+
+{{ $navbar := resources.Get "scripts/navbar.js" }}
+{{ $scripts = $scripts | append $navbar }}
+
+{{ $matrix := resources.Get "scripts/matrix.js" }}
+{{ $scripts = $scripts | append $matrix }}
+
+{{ $cookies := resources.Get "scripts/cookies.js" }}
+{{ $scripts = $scripts | append $cookies }}
+
+{{/* Collect scripts from base page */}}
+
+{{ range .Params.Scripts }}
+  {{ with $.Resources.Get . }}
+    {{ $scripts = $scripts | append . }}
+  {{ end }}
+{{ end }}
+
+{{/* Collect scripts from included pages */}}
+
+{{ range .Pages }}
+  {{ $page := . }}
+  {{ range .Params.Scripts }}
+    {{ with $page.Resources.Get . }}
+      {{ $scripts = $scripts | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* Insert scripts */}}
+
+{{ range $scripts }}
+  {{ $script := . | resources.Minify | resources.Fingerprint }}
+  <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>
+{{ end }}

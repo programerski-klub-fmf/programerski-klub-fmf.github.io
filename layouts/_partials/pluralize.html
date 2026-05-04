@@ -1,0 +1,14 @@
+{{- $count := int .count | default 0 -}}
+{{- $mod100 := mod $count 100 -}}
+
+{{- $form := .other -}}
+
+{{- if and (eq $mod100 1) .one -}}
+  {{- $form = .one -}}
+{{- else if and (eq $mod100 2) .two -}}
+  {{- $form = .two -}}
+{{- else if and (or (eq $mod100 3) (eq $mod100 4)) .few -}}
+  {{- $form = .few -}}
+{{- end -}}
+
+{{- $form -}}

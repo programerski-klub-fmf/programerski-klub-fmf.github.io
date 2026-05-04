@@ -1,0 +1,19 @@
+{{ $sections := slice . }}
+
+{{ if .IsHome }}
+  {{ $sections = append site.Sections $sections }}
+{{ end }}
+
+{{ range $sections }}
+  {{ $section := . }}
+  {{ $separator := site.Params.Separator }}
+  {{ $sectionTitle := $section.Title | plainify | htmlUnescape }}
+  {{ $siteTitle := site.Title | plainify | htmlUnescape }}
+  {{ $feedTitle := $sectionTitle }}
+  {{ if ne $sectionTitle $siteTitle }}
+    {{ $feedTitle = printf "%s%s%s" $sectionTitle $separator $siteTitle }}
+  {{ end }}
+  {{ with $section.OutputFormats.Get "RSS" }}
+    <link rel="alternate" type="application/atom+xml" href="{{ .Permalink }}" title="{{ $feedTitle }}" />
+  {{ end }}
+{{ end }}

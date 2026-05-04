@@ -1,0 +1,28 @@
+baseURL = "https://progklub.si/"
+title = "Programerski klub FMF"
+locale = "sl"
+timeZone = "Europe/Ljubljana"
+disableKinds = ["taxonomy", "term"]
+enableEmoji = true
+enableGitInfo = true
+titleCaseStyle = "firstupper"
+
+[params]
+description = "Programerski klub na Fakulteti za matematiko in fiziko Univerze v Ljubljani"
+keywords = ["fakulteta za matematiko in fiziko", "programerski klub", "programiranje", "tehnologija"]
+author = "Programerski klub FMF"
+separator = " – "
+
+[frontmatter]
+date = ["date", "published", "publishdate", "pubdate", "modified", "moddate", "lastmod"]
+lastmod = ["modified", "moddate", "lastmod", ":git", "published", "publishdate", "pubdate", "date"]
+publishDate = ["published", "pubdate", "date"]
+expiryDate = ["expirydate", "unpublishdate"]
+
+[markup.highlight]
+wrapperClass = "block highlight"
+style = "monokai"
+
+[outputFormats.RSS]
+mediatype = "application/rss"
+baseName = "feed"

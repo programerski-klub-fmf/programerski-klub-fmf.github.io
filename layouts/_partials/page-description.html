@@ -1,0 +1,2 @@
+{{- $description := or (.Scratch.Get "PageDescription") .Description .Summary site.Params.Description -}}
+{{- $description | plainify | htmlUnescape | strings.ReplaceRE `[\r\n]+` " " | strings.TrimSpace -}}

@@ -1,0 +1,19 @@
+{{ define "main" }}
+  {{- .Scratch.Set "PageTitle" "Stran ni najdena" -}}
+  {{- .Scratch.Set "PageDescription" "Zahtevane strani ni bilo mogoče najti" -}}
+
+  <section class="section">
+    <article class="card">
+      <div class="card-content">
+        <h1 class="title">Stran ni najdena (404)</h1>
+        <div class="content">
+          <p>Strani, ki ste jo zahtevali, ni bilo mogoče najti na strežniku.</p>
+          <p><a href="{{ site.Home.RelPermalink }}">Nazaj na glavno stran</a>
+        </div>
+      </div>
+    </article>
+  </section>
+{{ end }}
+
+{{/* TODO: Schema.org markup */}}
+{{/* TODO: Link to feeds from HTML */}}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="{{ site.Language.Locale }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>{{ partial "page-title" . }}</title>
+    <meta name="description" content="{{ partial "page-description" . }}" />
+    {{ with .Keywords }}<meta name="keywords" content="{{ delimit . ", " }}">/{{ end }}
+    {{ with .Params.Author }}<meta name="author" content="{{ . }}" />{{ end }}
+    <link rel="canonical" href="{{ .Permalink }}" />
+    <link rel="manifest" href="/site.webmanifest" />
+    {{ partial "meta-styles" . }}
+    {{ partial "meta-scripts" . }}
+    {{ partialCached "meta-favicons" . }}
+    {{ partial "meta-feeds" . }}
+    {{ partial "meta-socials" . }}
+  </head>
+
+  <body>
+    <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+    {{ partial "base-navbar" . }}
+
+    <main class="max-width-1100 min-height-viewport py-4">
+      {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ partialCached "base-footer" . }}
+  </body>
+</html>

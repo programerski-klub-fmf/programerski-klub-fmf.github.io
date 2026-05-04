@@ -1,0 +1,17 @@
+# Auto detect text files and perform LF normalization
+*   text eol=lf
+*   text=auto
+.*  text eol=lf
+.*  text=auto
+
+# Show language aware diffs
+*.css   diff=css
+*.htm   diff=html
+*.html  diff=html
+*.java  diff=java
+*.kt    diff=kotlin
+*.tex   diff=tex
+*.vue   diff=html
+*.py    diff=python
+*.md    diff=markdown
+*.sh    diff=bash

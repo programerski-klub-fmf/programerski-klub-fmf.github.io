@@ -1,0 +1,15 @@
+- label: Novice
+  href: /news/
+  icon: newspaper
+
+- label: Računalniške delavnice
+  href: /workshops/
+  icon: clipboard-list
+
+- label: Projekti
+  href: /projects/
+  icon: code-branch
+
+- label: Resne zadeve
+  href: /entertainment/
+  icon: landmark

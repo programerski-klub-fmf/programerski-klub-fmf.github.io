@@ -1,0 +1,23 @@
+{{- $url := urls.Parse .Destination -}}
+{{- $href := $url.String -}}
+{{- if strings.HasPrefix $url.String "#" -}}
+  {{- $href = printf "%s#%s" .PageInner.RelPermalink $url.Fragment -}}
+{{- else if and $href (not $url.IsAbs) -}}
+  {{- $path := strings.TrimPrefix "./" $url.Path -}}
+  {{- with or
+    ($.PageInner.GetPage $path)
+    ($.PageInner.Resources.Get $path)
+    (resources.Get $path)
+  -}}
+    {{- $href = .RelPermalink -}}
+    {{- with $url.RawQuery -}}
+      {{- $href = printf "%s?%s" $href . -}}
+    {{- end -}}
+    {{- with $url.Fragment -}}
+      {{- $href = printf "%s#%s" $href . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $isExternal := strings.HasPrefix $href "https" -}}
+<a href="{{ $href }}" {{- with .Title }} title="{{ . }}" {{- end -}} {{- if $isExternal }} target="_blank" rel="noopener" {{- end }}>{{ .Text }}</a>
+{{- /**/ -}}

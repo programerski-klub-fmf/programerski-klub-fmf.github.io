@@ -1,0 +1,23 @@
+<nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a id="navbar-title" class="navbar-item {{- if eq $.RelPermalink "/" }} is-active {{- end }}" href="/">Programerski klub FMF</a>
+
+    <a id="navbar-toggle" class="navbar-burger" role="button" aria-label="menu" aria-expanded="false" data-target="navbar-main">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbar-main" class="navbar-menu">
+    {{ range $item := hugo.Data.navbar }}
+      <a class="navbar-item {{- if hasPrefix $.RelPermalink $item.href }} is-active {{- end }}" href="{{ $item.href }}">
+        <span class="icon-text">
+          <span class="icon"><i class="fas fa-{{ $item.icon }}"></i></span>
+          <span>{{ $item.label }}</span>
+        </span>
+      </a>
+    {{ end }}
+  </div>
+</nav>

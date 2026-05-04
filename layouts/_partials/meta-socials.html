@@ -1,0 +1,49 @@
+{{/* Open Graph */}}
+
+<meta property="og:site_name" content="{{ with site.Title }}{{ . }}{{ end }}" />
+
+<meta property="og:title" content="{{ partial "page-title" . }}" />
+<meta property="og:description" content="{{ partial "page-description" . }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+
+{{ with .Resources.Get .Params.CoverUrl }}
+  <meta property="og:image" content="{{ .RelPermalink }}" />
+  <meta property="og:image:alt" content="{{ $.Params.CoverAlt }}" />
+{{ else }}
+  <meta property="og:image" content="/images/social.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="1024" />
+{{ end }}
+
+{{ with or .Params.Locale site.Language.Locale }}
+  <meta property="og:locale" content="{{ replace . `-` `_` }}" />
+{{ end }}
+
+{{ if .IsPage }}
+  <meta property="og:type" content="article" />
+  <meta property="article:section" content="{{ .CurrentSection.Title }}" />
+  {{ with .Params.Author }}
+    <meta property="article:author" content="{{ . }}" />
+  {{ end }}
+  {{ $ISO8601 := "2006-01-02T15:04:05-07:00" }}
+  {{ with .PublishDate }}
+    <meta property="article:published_time" {{ .Format $ISO8601 | printf "content=%q" | safeHTMLAttr }} />
+  {{ end }}
+  {{ with .Lastmod }}
+    <meta property="article:modified_time" {{ .Format $ISO8601 | printf "content=%q" | safeHTMLAttr }} />
+  {{ end }}
+{{ end }}
+
+{{/* Twitter */}}
+
+<meta name="twitter:title" content="{{ partial "page-title" . }}" />
+<meta name="twitter:description" content="{{ partial "page-description" . }}" />
+
+{{ with .Resources.Get .Params.CoverUrl }}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="{{ .RelPermalink }}" />
+{{ else }}
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/images/social.png" />
+{{ end }}

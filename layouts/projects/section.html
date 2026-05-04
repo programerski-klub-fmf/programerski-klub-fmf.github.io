@@ -1,0 +1,26 @@
+{{ define "main" }}
+  <section class="section">
+    <h1 class="title is-2 has-text-centered">{{ .Title }}</h1>
+    {{ with .Content }}<div class="content">{{ . }}</div>{{ end }}
+  </section>
+
+  <section class="section">
+    <div class="masonry">
+      {{ range .RegularPages.ByWeight }}
+        <article class="card masonry-item">
+          <header class="card-header">
+            <h2 class="card-header-title icon-text">
+              <a href="{{ .RelPermalink }}">
+                <span class="icon"><i class="fas fa-code-branch"></i></span>
+                <span>{{ .Title }}</span>
+              </a>
+            </h2>
+          </header>
+          <div class="card-content">
+            <div class="content">{{ .Content }}</div>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

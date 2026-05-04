@@ -1,0 +1,32 @@
+---
+title: Igra π
+description: Iščite in pobirajte števke števila π
+date: 2022-11-03 15:05:40 +01:00
+stylesheets: ["game.css"]
+scripts: ["game.js"]
+build:
+  publishResources: false
+---
+
+<div id="game-canvas" class="mb-4">
+  <div id="game-numbers"></div>
+  <div id="game-mouse" hidden></div>
+  <img id="game-background" src="{{< asset "pi.svg" >}}" alt="Grška črka pi" />
+  <input id="game-start-button" onclick="restartPlay()" type="image" src="{{< asset "play.svg" >}}" alt="Gumb za začetek" />
+  <div id="game-score" class="game-text disable-mouse" hidden>
+    <span>Število števk:</span>
+    <span id="game-score-value" class="game-highlighted"></span>
+  </div>
+</div>
+
+<p>
+  <input type="checkbox" id="game-hard-mode">
+  <label for="game-hard-mode">Težek način</label>
+</p>
+
+<p id="game-next-number" class="game-text" hidden>
+  <span>Poberi števko:</span>
+  <span id="game-next-number-value" class="game-highlighted"></span>
+</p>
+
+<p id="game-picked-numbers" class="game-text" hidden></p>

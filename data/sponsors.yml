@@ -1,0 +1,15 @@
+- name: AFLabs
+  url: https://aflabs.com/
+  logo: /images/logo-aflabs.svg
+
+- name: EBA
+  url: https://www.ebadms.com/
+  logo: /images/logo-eba.webp
+
+- name: Abelium
+  url: https://abelium.com/
+  logo: /images/logo-abelium.svg
+
+- name: ACEX
+  url: https://acex.si/
+  logo: /images/logo-acex.svg

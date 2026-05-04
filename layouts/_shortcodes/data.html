@@ -1,0 +1,5 @@
+{{- $value := hugo.Data -}}
+{{- range .Params -}}
+{{- $value = index $value . -}}
+{{- end -}}
+{{- $value -}}

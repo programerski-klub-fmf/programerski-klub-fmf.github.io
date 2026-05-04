@@ -1,0 +1,46 @@
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <a href="{{ hugo.Data.discord.invite }}" target="_blank" rel="noopener">
+        <span class="icon-text">
+          <span class="icon"><i class="fa-brands fa-discord"></i></span>
+          <span>Discord strežnik kluba</span>
+        </span>
+      </a>
+    </p>
+
+    {{/* TODO: Use semantic markup */}}
+    <p>Dobivamo se vsak ponedeljek ob 16:15 v P.01!</p>
+
+    <div class="columns is-vcentered">
+      <figure class="column image max-width-500">
+        <a href="https://www.fmf.uni-lj.si/" target="_blank" rel="noopener">
+          <img src="/images/logo-fmf.svg"
+               alt="Logotip Fakultete za matematiko in fiziko Univerze v Ljubljani"
+               loading="lazy"
+          />
+        </a>
+      </figure>
+    </div>
+
+    <p class="subtitle is-5 has-text-grey-light">Sponzorji</p>
+
+    <div class="columns is-vcentered is-6 max-width-1200">
+      {{ range $sponsor := hugo.Data.sponsors }}
+        <figure class="column image max-width-400">
+          <a href="{{ $sponsor.url }}" target="_blank" rel="noopener">
+            <img src="{{ $sponsor.logo }}"
+                 alt="Logotip podjetja {{ $sponsor.name }}"
+                 loading="lazy"
+            />
+          </a>
+        </figure>
+      {{ end }}
+    </div>
+
+    <div id="no-cookie-warning">
+      <p class="has-text-grey-light">Ta spletna stran ne uporablja piškotkov</p>
+      <button type="button" id="no-cookie-button" class="button geeks is-rounded is-small">Ok</button>
+    </div>
+  </div>
+</footer>

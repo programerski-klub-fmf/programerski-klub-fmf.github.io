@@ -1,0 +1,35 @@
+{{ define "main" }}
+  <section class="section">
+    <article class="card">
+      <div class="card-content">
+        <h1 class="title">{{ .Title }}</h1>
+        <div class="content">{{ .Content }}</div>
+        <hr />
+        <aside>
+          {{ if .Params.contacts }}
+            <div class="pb-5">
+              {{ $plurals := dict "count" (len .Params.contacts) "one" "Kontaktna oseba" "two" "Kontaktni osebi" "other" "Kontaktne osebe" }}
+              <span>{{ partial "pluralize" $plurals }}:</span>
+              {{- range $index, $contact := .Params.contacts }}
+                {{- if $index }}, {{ end }}
+                {{- if $contact.at }}
+                  <a href="mailto:{{ $contact.at }}" title="{{ $contact.at }}" target="_blank" rel="noopener">{{ $contact.name }}</a>
+                {{- else }}
+                  <span>{{ $contact.name }}</span>
+                {{- end }}
+              {{- end }}
+            </div>
+          {{ end }}
+          <div class="tags">
+            {{ with .Params.website }}
+              <a class="tag is-medium is-link" href="{{ . }}" target="_blank" rel="noopener">Spletna stran</a>
+            {{ end }}
+            {{ with .Params.repository }}
+              <a class="tag is-medium is-link" href="{{ . }}" target="_blank" rel="noopener">GitHub</a>
+            {{ end }}
+          </div>
+        </aside>
+      </div>
+    </article>
+  </section>
+{{ end }}
