@@ -160,6 +160,7 @@ jobs:
             echo "Host ${{ vars.PROGKLUB_SFTP_HOST }}"
             echo "User ${{ vars.PROGKLUB_SFTP_USER }}"
             echo "IdentityFile ~/.ssh/sftp_private_key"
+            echo "AddressFamily inet"
             if [ -n "${{ vars.PROGKLUB_PROXY_HOST }}" ]; then
               echo "ProxyJump ${{ vars.PROGKLUB_PROXY_HOST }}"
             fi
@@ -169,6 +170,7 @@ jobs:
               echo "Host ${{ vars.PROGKLUB_PROXY_HOST }}"
               echo "User ${{ vars.PROGKLUB_PROXY_USER }}"
               echo "IdentityFile ~/.ssh/proxy_private_key"
+              echo "AddressFamily inet"
             fi
           } > ~/.ssh/config
           chmod 600 ~/.ssh/config
