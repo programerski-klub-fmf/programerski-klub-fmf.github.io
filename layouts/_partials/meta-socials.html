@@ -7,10 +7,10 @@
 <meta property="og:url" content="{{ .Permalink }}" />
 
 {{ with .Resources.Get .Params.CoverUrl }}
-  <meta property="og:image" content="{{ .RelPermalink }}" />
+  <meta property="og:image" content="{{ .Permalink }}" />
   <meta property="og:image:alt" content="{{ $.Params.CoverAlt }}" />
 {{ else }}
-  <meta property="og:image" content="/images/social.png" />
+  <meta property="og:image" content="{{ absURL "/images/social.png" }}" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1024" />
   <meta property="og:image:height" content="1024" />
@@ -42,8 +42,8 @@
 
 {{ with .Resources.Get .Params.CoverUrl }}
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="{{ .RelPermalink }}" />
+  <meta name="twitter:image" content="{{ .Permalink }}" />
 {{ else }}
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:image" content="/images/social.png" />
+  <meta name="twitter:image" content="{{ absURL "/images/social.png" }}" />
 {{ end }}

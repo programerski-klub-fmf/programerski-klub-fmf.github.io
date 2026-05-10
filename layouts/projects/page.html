@@ -1,16 +1,16 @@
 {{ define "main" }}
   <section class="section">
-    <article class="card">
+    <article id="project" class="card">
       <div class="card-content">
         <h1 class="title">{{ .Title }}</h1>
         <div class="content">{{ .Content }}</div>
         <hr />
         <aside>
-          {{ if .Params.contacts }}
+          {{ if .Params.Contacts }}
             <div class="pb-5">
-              {{ $plurals := dict "count" (len .Params.contacts) "one" "Kontaktna oseba" "two" "Kontaktni osebi" "other" "Kontaktne osebe" }}
+              {{ $plurals := dict "count" (len .Params.Contacts) "one" "Kontaktna oseba" "two" "Kontaktni osebi" "other" "Kontaktne osebe" }}
               <span>{{ partial "pluralize" $plurals }}:</span>
-              {{- range $index, $contact := .Params.contacts }}
+              {{- range $index, $contact := .Params.Contacts }}
                 {{- if $index }}, {{ end }}
                 {{- if $contact.at }}
                   <a href="mailto:{{ $contact.at }}" title="{{ $contact.at }}" target="_blank" rel="noopener">{{ $contact.name }}</a>
@@ -21,10 +21,10 @@
             </div>
           {{ end }}
           <div class="tags">
-            {{ with .Params.website }}
+            {{ with .Params.Website }}
               <a class="tag is-medium is-link" href="{{ . }}" target="_blank" rel="noopener">Spletna stran</a>
             {{ end }}
-            {{ with .Params.repository }}
+            {{ with .Params.Repository }}
               <a class="tag is-medium is-link" href="{{ . }}" target="_blank" rel="noopener">GitHub</a>
             {{ end }}
           </div>
