@@ -145,8 +145,7 @@ The folder `assets/scripts` contains the site's global scripts, such as the scri
 
 The folder `assets/styles` contains the site's global stylesheets. The main file, `main.scss`, imports and sets up the
 [*Bulma*](https://bulma.io/) *CSS* framework, the [*Font Awesome*](https://fontawesome.com/) icon library, and imports
-the
-additional custom styles, such as cookies button and the matrix background.
+the additional custom styles, such as cookies button and the matrix background.
 
 You must not change anything inside the `bulma` or `fontawesome` folders as they contain the source code for the
 respective libraries.

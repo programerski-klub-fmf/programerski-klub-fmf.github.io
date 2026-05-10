@@ -9,8 +9,7 @@
       </a>
     </p>
 
-    {{/* TODO: Use semantic markup */}}
-    <p>Dobivamo se vsak ponedeljek ob 16:15 v P.01!</p>
+    <p>Dobivamo se {{ hugo.Data.meetings.day }} ob {{ hugo.Data.meetings.time }} v {{ hugo.Data.meetings.location }}!</p>
 
     <div class="columns is-vcentered">
       <figure class="column image max-width-500">

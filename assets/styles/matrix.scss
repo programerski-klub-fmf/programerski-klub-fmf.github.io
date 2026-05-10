@@ -11,8 +11,3 @@
   pointer-events: none;
   touch-action: none;
 }
-
-body > *:not(#matrix-canvas) {
-  position: relative;
-  z-index: 1;
-}
