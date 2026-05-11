@@ -42,18 +42,50 @@
 }
 
 .masonry {
+  --masonry-gap: var(--bulma-block-spacing);
+  --masonry-columns: 2;
+
   column-count: 1;
-  column-gap: 1.5rem;
+  column-gap: var(--masonry-gap);
 }
 
 @media screen and (min-width: iv.$tablet) {
   .masonry {
-    column-count: 2;
+    column-count: min(var(--masonry-columns), 2);
+  }
+}
+
+@media screen and (min-width: iv.$desktop) {
+  .masonry {
+    column-count: var(--masonry-columns);
   }
 }
 
 .masonry-item {
   display: block;
-  margin-bottom: 1.5rem;
   break-inside: avoid;
+
+  &:not(:last-child) {
+    margin-bottom: var(--masonry-gap);
+  }
+}
+
+@for $i from 1 through 6 {
+  .masonry-cols-#{$i} {
+    --masonry-columns: #{$i};
+  }
+}
+
+$masonry-gap: (
+  0: 0,
+  1: 0.5rem,
+  2: 1rem,
+  3: 1.5rem,
+  4: 2rem,
+);
+
+@each $index, $size in $masonry-gap {
+  .masonry-gap-#{$index} {
+    --masonry-gap: #{$size};
+  }
 }

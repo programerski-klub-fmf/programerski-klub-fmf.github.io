@@ -1,0 +1,21 @@
+{{- $alt := .Get "alt" -}}
+
+{{- $match := .Get "match" -}}
+{{- $images := .Page.Resources.Match $match -}}
+
+{{- $columns := .Get "columns" | default 3 -}}
+
+<div class="masonry masonry-cols-{{ $columns }} masonry-gap-2">
+  {{ range sort $images "Name" "asc" -}}
+    <div class="masonry-item">
+      <figure class="image is-fullwidth">
+        <img src="{{ .RelPermalink }}"
+             alt="{{ $alt }}"
+             width="{{ .Width }}"
+             height="{{ .Height }}"
+             loading="lazy"
+        />
+      </figure>
+    </div>
+  {{ end }}
+</div>
