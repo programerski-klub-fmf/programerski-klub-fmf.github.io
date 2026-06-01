@@ -10,8 +10,4 @@ Programerski klub vabi na delavnico dokazovanja pravilnosti programov. Pri tej d
 
 Na prenosnih računalnikih je priporočena predhodna namestitev razširitve [Dafny VS Code](https://marketplace.visualstudio.com/items?itemName=dafny-lang.ide-vscode). Prav tako pa lahko uporabite računalnike iz računalniške učilnice. Potrebno je osnovno razumevanje programiranja in dokazovanja.
 
-{{< figure
-src="./images/plakat.png"
-alt="Plakat za Dafny delavnico"
-class="max-width-500"
->}}
+{{< poster src="/images/plakat.png" alt="Plakat za Dafny delavnico" >}}

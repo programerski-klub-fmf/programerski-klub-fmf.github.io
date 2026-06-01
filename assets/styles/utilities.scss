@@ -70,6 +70,10 @@
   }
 }
 
+.masonry:has(~ *) {
+  margin-bottom: var(--masonry-gap);
+}
+
 @for $i from 1 through 6 {
   .masonry-cols-#{$i} {
     --masonry-columns: #{$i};

@@ -16,8 +16,4 @@ Videli bomo tudi, da je Emacs več kot zmogljiv urejevalnik teksta, tako s svoji
 
 Delavnica je primerna za začetnike in bo primarno vsebovala stvari, ki bi si jih vsak Emacs uporabnik želel vedeti ob začetku (in jih ponavadi izve šele po nekaj letih). Tisti, ki želijo sodelovati, naj si namestijo Emacs verzijo vsaj 30 ter sistem Git (za kloniranje datotek za delavnico).
 
-{{< figure
-src="./images/plakat.png"
-alt="Plakat za Emaxxing delavnico"
-class="max-width-500"
->}}
+{{< poster src="/images/plakat.png" alt="Plakat za Emaxxing delavnico" >}}

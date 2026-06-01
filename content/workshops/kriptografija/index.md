@@ -12,8 +12,4 @@ Na Programerskem klubu FMF v sodelovanju z društvom [DragonSec SI](https://drag
 
 Na začetku bomo poslušali kratko predavanje o osnovah kriptografije, nato pa se bomo preizkusili v reševanju praktičnih nalog, kjer v Pythonu pišemo programe za iskanje skritih zastavic v šifriranih sporočilih. Računalniška delavnica je primerna za začetnike, potrebno je zgolj osnovno znanje Pythona.
 
-{{< figure
-src="./images/plakat.png"
-alt="Plakat za kriptografsko delavnico"
-class="max-width-500"
->}}
+{{< poster src="/images/plakat.png" alt="Plakat za kriptografsko delavnico" >}}
