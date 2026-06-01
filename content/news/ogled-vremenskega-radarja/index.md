@@ -11,7 +11,7 @@ Ko smo prispeli, smo si najprej na hitro ogledali zapuščene garaže raketne ba
 
 {{< gallery match="/images/garaze-*.jpg" alt="Garaže raketne baze JLA" >}}
 
-Tam smo si najprej pogledali nadzorni kontejner, v katerem so magnetron, sprejemnik in računalnik za radar, potem pa še drugi kontejner, kjer smo si ogledali še nekaj programske opreme in različnih radarskih slik. Delovanje radarja nam je še bolj podrobno razložil Vito Švajgel iz ARSA, ki ga Jakob slučajno pozna, ker je pri njem delal seminarsko nalogo.
+Tam smo si najprej pogledali nadzorni kontejner, v katerem so magnetron, sprejemnik in računalnik za radar, potem pa še drugi kontejner, kjer smo si ogledali še nekaj programske opreme in različnih radarskih slik. Delovanje radarja nam je še bolj podrobno razložil Vito Švajgel iz ARSA, ki ga Jakob slučajno pozna, ker mu je pomagal pri seminarski nalogi.
 
 {{< gallery match="/images/nadzorna-oprema-*.jpg" alt="Nadzorna oprema radarja" >}}
 
