@@ -17,7 +17,7 @@ Tam smo si najprej pogledali nadzorni kontejner, v katerem so magnetron, sprejem
 
 Povzpeli smo se tudi na vrh radarskega stolpa. Ko smo opazili, da ima ARSO tam spletne kamere, smo seveda morali narediti tudi skupinsko sliko. Žal kamere delujejo le na 10 minut, tako da smo morali na sliko čakati nekaj časa.
 
-{{< gallery match="/images/arso-kamera-*.jpg" alt="Spletna khuamera ARSO na Pasji ravni" >}}
+{{< gallery match="/images/arso-kamera-*.jpg" alt="Spletna kamera ARSO na Pasji ravni" >}}
 
 Potem smo šli tudi v kupolo radarja, kjer smo si pogledali tudi samo anteno radarja in njen parabolični krožnik, ki nam ju je predstavil še glavni radarist Anton Zgonc.
 
