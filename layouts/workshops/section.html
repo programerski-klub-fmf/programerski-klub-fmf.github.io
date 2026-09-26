@@ -24,7 +24,7 @@
 
         <div class="card-content">
           <h2 class="title is-4"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h2>
-          {{ partial "page-meta" $page }}
+          {{ partial "page-meta" (dict "page" $page) }}
           <div class="content">{{ $page.Summary | plainify }}</div>
           <a href="{{ $page.RelPermalink }}">Preberi več ...</a>
         </div>

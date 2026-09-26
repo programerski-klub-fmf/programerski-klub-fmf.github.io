@@ -17,10 +17,8 @@
 
   <div class="card-content">
     <h3 class="title is-5"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
-    {{ partial "page-meta" $page }}
+    {{ partial "page-meta" (dict "page" $page) }}
     <div class="content">{{ $page.Summary | plainify }}</div>
     <a href="{{ $page.RelPermalink }}">Preberi več ...</a>
   </div>
 </article>
-
-

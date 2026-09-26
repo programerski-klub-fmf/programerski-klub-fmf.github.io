@@ -15,7 +15,7 @@
 
       <div class="card-content">
         <h1 class="title">{{ .Title }}</h1>
-        {{ partial "page-meta" . }}
+        {{ partial "page-meta" (dict "page" .) }}
         <div class="content">{{ .Content }}</div>
         <hr />
         {{ partial "page-navigation" . }}
