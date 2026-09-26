@@ -1,0 +1,12 @@
+{{ $page := .page }}
+
+<div class="column is-flex">
+  <article class="card is-flex is-flex-direction-column is-flex-grow-1">
+    <div class="card-content">
+      <h3 class="title is-5"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+      {{ partial "page-meta" (dict "page" $page "short" true) }}
+      <div class="content">{{ $page.Summary | plainify | truncate 120 }}</div>
+      <a href="{{ $page.RelPermalink }}">Preberi več ...</a>
+    </div>
+  </article>
+</div>

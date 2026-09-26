@@ -1,6 +1,6 @@
 ---
-title: Informacije
-description: Osnovne informacije o Programerskem klubu FMF
+title: Uvod
+description: Zelo osnovne informacije o Programerskem klubu FMF
 build:
   render: never
   list: always

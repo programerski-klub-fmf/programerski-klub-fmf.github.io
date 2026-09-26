@@ -175,10 +175,12 @@ content
 ├── projects
 │   ├── _index.md
 │   └── project-name.md
+├── introduction
+│   ├── _index.md
+│   └── meetings.md
 ├── about
 │   ├── _index.md
 │   ├── discord.md
-│   ├── meetings.md
 │   ├── projects.md
 │   ├── vision.md
 │   └── workshops.md
