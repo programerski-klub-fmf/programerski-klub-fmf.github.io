@@ -2,7 +2,7 @@
   <section class="section">
     <h1 class="title is-2 has-text-centered pb-4">Programerski klub FMF</h1>
     {{ with resources.Get "/images/cats.png" }}
-      <figure class="image max-width-700">
+      <figure class="image max-width-400">
         <img src="{{ .RelPermalink }}"
              alt="Maskota Programerskega kluba FMF"
              width="{{ .Width }}"
@@ -10,6 +10,15 @@
         />
       </figure>
     {{ end }}
+  </section>
+
+  <section id="meetings" class="section">
+    {{ with site.GetPage "section" "meetings" }}
+      {{ range .RegularPages.ByWeight }}
+        {{ partial "homepage-about" . }}
+      {{ end }}
+    {{ end }}
+
   </section>
 
   <section id="news" class="section">

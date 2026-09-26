@@ -19,6 +19,9 @@ lastmod = ["modified", "moddate", "lastmod", ":git", "published", "publishdate",
 publishDate = ["published", "pubdate", "date"]
 expiryDate = ["expirydate", "unpublishdate"]
 
+[security]
+allowContent = ['^text/markdown$', '^text/html$']
+
 [markup.highlight]
 wrapperClass = "block highlight"
 style = "monokai"
