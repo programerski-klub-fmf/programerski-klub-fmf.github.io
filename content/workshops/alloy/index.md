@@ -3,6 +3,7 @@ title: Uvod v modeliranje programja z Alloy Analyzerjem
 presenter: Janez I. Jereb
 date: 2025-11-12 16:00:00 +01:00
 location: P.01
+format: long
 published: 2026-03-07 21:44:41 +01:00
 ---
 

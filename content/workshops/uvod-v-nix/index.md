@@ -3,6 +3,7 @@ title: Kratek uvod v Nix
 presenter: Jure Smolar
 date: 2025-10-29 16:00:00 +01:00
 location: P.01
+format: long
 published: 2026-03-07 14:06:56 +01:00
 ---
 

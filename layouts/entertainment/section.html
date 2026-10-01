@@ -1,8 +1,5 @@
 {{ define "main" }}
-  <section class="section">
-    <h1 class="title is-2 has-text-centered">{{ .Title }}</h1>
-    {{ with .Content }}<div class="content">{{ . }}</div>{{ end }}
-  </section>
+  {{ partial "section-info" . }}
 
   <section class="section">
     {{ range .RegularPages.ByWeight }}

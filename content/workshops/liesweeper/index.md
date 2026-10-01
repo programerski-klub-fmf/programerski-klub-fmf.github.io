@@ -3,6 +3,7 @@ title: Liesweeper
 presenter: Kaikai
 date: 2026-10-08 15:00:00 +02:00
 location: P.01
+format: short
 published: 2026-09-28 11:24:10 +02:00
 ---
 

@@ -2,7 +2,8 @@
 title: Dokazovanje z jezikom Dafny
 presenter: Janez I. Jereb
 date: 2026-04-07 17:00:00 +02:00
-location:  3.11
+location: 3.11
+format: long
 published: 2026-04-29 15:09:43 +02:00
 ---
 

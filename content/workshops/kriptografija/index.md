@@ -3,6 +3,7 @@ title: Kibernetska varnost in kripotografske metode
 presenter: Andraž Strgar, društvo DragonSec SI
 date: 2026-03-09 16:00:00 +01:00
 location: P.01
+format: long
 coverUrl: /images/delavnica.jpg
 coverAlt: Kriptografska delavnica na Programerskem klubu FMF
 published: 2026-03-07 21:48:02 +01:00

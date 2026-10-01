@@ -2,6 +2,14 @@
   {{ $page := .page }}
   {{ $short := .short }}
 
+  {{ if and (not $short) (eq $page.Section "workshops") }}
+    {{ if eq $page.Params.Format "short" }}
+      <span class="tag is-medium is-dark">Kratka predstavitev</span>
+    {{ else if eq $page.Params.Format "long" }}
+      <span class="tag is-medium is-dark">Dolga delavnica</span>
+    {{ end }}
+  {{ end }}
+
   {{ if and (not $short) (eq $page.Section "workshops") $page.Params.Presenter }}
     <address class="tag is-medium is-dark" rel="author">{{ $page.Params.Presenter }}</address>
   {{ end }}
@@ -13,7 +21,7 @@
   {{ $datetime := $page.Date | time.Format "2006-01-02T15:04:05Z07:00" }}
   {{ $human_date := $page.Date | time.Format ":date_long" }}
   {{ $human_time := $page.Date | time.Format ":time_short" }}
-  <time class="tag is-medium is-dark {{- if eq .Section "workshops" }} has-text-weight-bold {{- end }}" datetime="{{ $datetime }}">{{ $human_date }}, {{ $human_time }}</time>
+  <time class="tag is-medium is-dark {{- if eq $page.Section "workshops" }} has-text-weight-bold {{- end }}" datetime="{{ $datetime }}">{{ $human_date }}, {{ $human_time }}</time>
 
   {{ if and (not $short) (eq $page.Section "workshops") }}
     <span class="tag is-medium is-dark">{{ $page.Params.Location }}</span>

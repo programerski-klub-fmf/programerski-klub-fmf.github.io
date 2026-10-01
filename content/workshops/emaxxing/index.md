@@ -3,6 +3,7 @@ title: Emaxxing
 presenter: Jure Smolar
 date: 2026-04-20 17:00:00 +02:00
 location: P.01
+format: long
 coverUrl: /images/delavnica.jpg
 coverAlt: Emaxxing delavnica na Programerskem klubu FMF
 published: 2026-04-17 16:22:33 +02:00

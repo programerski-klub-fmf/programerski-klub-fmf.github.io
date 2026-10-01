@@ -3,6 +3,7 @@ title: Tekmovalno programiranje
 presenter: Bor Grošelj Simič
 date: 2025-10-15 16:00:00 +02:00
 location: P.01
+format: long
 published: 2026-03-07 21:42:27 +01:00
 ---
 
