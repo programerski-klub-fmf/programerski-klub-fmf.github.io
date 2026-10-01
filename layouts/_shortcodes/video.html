@@ -1,0 +1,32 @@
+{{ $src := .Get "src" | default (.Get 0) }}
+{{ $poster := .Get "poster" }}
+
+{{ with and $src (not (urls.Parse $src).IsAbs) }}
+  {{ with or ($.Page.Resources.Get $src) (resources.Get $src) }}
+    {{ $src = .RelPermalink }}
+  {{ else }}
+    {{ $src = relURL $src }}
+  {{ end }}
+{{ end }}
+
+{{ with and $poster (not (urls.Parse $poster).IsAbs) }}
+  {{ with or ($.Page.Resources.Get $poster) (resources.Get $poster) }}
+    {{ $poster = .RelPermalink }}
+  {{ else }}
+    {{ $poster = relURL $poster }}
+  {{ end }}
+{{ end }}
+
+<figure class="video{{ with .Get "class" }} {{ . }}{{ end }}">
+  <video
+    controls
+    preload="{{ .Get "preload" | default "metadata" }}"
+    {{ with $poster }}poster="{{ . }}"{{ end }}
+    {{ with .Get "width" }}width="{{ . }}"{{ end }}
+    {{ with .Get "autoplay" }}autoplay playsinline{{ end }}
+    {{ with .Get "loop" }}loop{{ end }}
+    {{ with .Get "alt" }}aria-label="{{ . }}"{{ end }}>
+    <source src="{{ $src }}">
+  </video>
+  {{ with .Get "caption" }}<figcaption>{{ . | $.Page.RenderString }}</figcaption>{{ end }}
+</figure>

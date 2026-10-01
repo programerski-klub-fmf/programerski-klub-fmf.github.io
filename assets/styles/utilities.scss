@@ -71,7 +71,7 @@
 }
 
 .masonry:has(~ *) {
-  margin-bottom: var(--masonry-gap);
+  margin-bottom: var(--bulma-content-block-margin-bottom);
 }
 
 @for $i from 1 through 6 {
@@ -92,4 +92,8 @@ $masonry-gap: (
   .masonry-gap-#{$index} {
     --masonry-gap: #{$size};
   }
+}
+
+.video:has(~ *) {
+  margin-bottom: var(--bulma-content-block-margin-bottom);
 }
