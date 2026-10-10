@@ -21,7 +21,7 @@
   </section>
 
   <section id="workshops" class="section">
-    <h2 class="title is-4 has-text-centered">Prihajajoče delavnice</h2>
+    <h2 class="title is-4 has-text-centered">Prihajajoče delavnice in predstavitve</h2>
 
     {{ with site.GetPage "section" "workshops" }}
       {{ $upcoming := (where .Pages "Date" "ge" now).ByDate }}

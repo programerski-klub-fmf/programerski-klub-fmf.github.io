@@ -101,6 +101,15 @@
   {{/* Workshops */}}
 
   {{- if eq .Section "workshops" -}}
+    {{- $duration := "2h" -}}
+    {{- with .Params.format -}}
+      {{- if eq . "short" -}}
+        {{- $duration = "30m" -}}
+      {{- else if eq . "long" -}}
+        {{- $duration = "2h" -}}
+      {{- end -}}
+    {{- end -}}
+
     {{- $eventNode := dict
       "@type" "EducationEvent"
       "@id" (printf "%s#workshop" .Permalink)
@@ -110,7 +119,7 @@
       "mainEntityOfPage" (dict "@id" $webpageID)
       "eventStatus" "https://schema.org/EventScheduled"
       "startDate" (.Date.Format "2006-01-02T15:04:05Z07:00")
-      "endDate" ((.Date.Add (time.ParseDuration "2h")).Format "2006-01-02T15:04:05Z07:00")
+      "endDate" ((.Date.Add (time.ParseDuration $duration)).Format "2006-01-02T15:04:05Z07:00")
     -}}
 
     {{- with .Resources.Get .Params.CoverUrl -}}
